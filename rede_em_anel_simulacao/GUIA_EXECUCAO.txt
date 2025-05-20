@@ -1,0 +1,155 @@
+GUIA DE EXECUÇÃO - SIMULAÇÃO DE REDE EM ANEL
+===========================================
+
+Este guia mostra exatamente quais comandos executar e em quais terminais para testar a simulação de rede em anel.
+
+PRÉ-REQUISITOS
+--------------
+1. Python 3.6 ou superior instalado
+2. Três terminais disponíveis
+3. Projeto baixado e descompactado
+
+PASSO 1: PREPARAÇÃO DOS TERMINAIS
+--------------------------------
+1. Abra três terminais (PowerShell ou Prompt de Comando)
+2. Em cada terminal, navegue até a pasta do projeto:
+   ```
+   cd C:\Users\joxto\Downloads\T1_FundamentosRedes\rede_em_anel_simulacao
+   ```
+
+PASSO 2: INICIANDO OS NÓS
+-------------------------
+Terminal 1 (Bob - Gerador de Token):
+```
+cd Bob
+python main.py
+```
+Você verá:
+- Informações de configuração do Bob
+- IP Local: 127.0.0.1:6000
+- Próximo nó: 127.0.0.1:6001
+- Gerador de token: Sim
+
+Terminal 2 (Mary):
+```
+cd Mary
+python main.py
+```
+Você verá:
+- Informações de configuração da Mary
+- IP Local: 127.0.0.1:6001
+- Próximo nó: 127.0.0.1:6002
+- Gerador de token: Não
+
+Terminal 3 (John):
+```
+cd John
+python main.py
+```
+Você verá:
+- Informações de configuração do John
+- IP Local: 127.0.0.1:6002
+- Próximo nó: 127.0.0.1:6000
+- Gerador de token: Não
+
+PASSO 3: TESTANDO FUNCIONALIDADES
+--------------------------------
+1. Teste de Mensagem Unicast:
+   No terminal do Bob:
+   - Digite 1 (Enviar mensagem)
+   - Digite "Mary" (destino)
+   - Digite "Olá Mary!" (mensagem)
+   - Digite 2 para ver a fila
+   - Observe a mensagem sendo transmitida
+
+2. Teste de Mensagem Broadcast:
+   No terminal do Bob:
+   - Digite 1 (Enviar mensagem)
+   - Digite "TODOS" (destino)
+   - Digite "Olá a todos!" (mensagem)
+   - Digite 2 para ver a fila
+   - Observe a mensagem sendo transmitida para todos
+
+3. Teste de Erro CRC:
+   No terminal do Bob:
+   - Digite 1 (Enviar mensagem)
+   - Digite "John" (destino)
+   - Digite "Teste de erro" (mensagem)
+   - Observe o processo de detecção de erro e retransmissão
+
+4. Teste de Timeout:
+   - Feche o terminal do John
+   - No terminal do Bob, envie uma mensagem para "John"
+   - Observe o timeout e regeneração do token
+
+5. Teste de Fila:
+   No terminal do Bob:
+   - Digite 2 (Ver fila atual)
+   - Observe as mensagens pendentes
+   - Tente adicionar mais de 10 mensagens
+
+PASSO 4: VERIFICAÇÃO DE FUNCIONAMENTO
+------------------------------------
+Verifique se:
+
+1. Token está circulando:
+   - Observe os logs em cada terminal
+   - Deve ver "Token recebido" periodicamente
+
+2. Mensagens estão sendo transmitidas:
+   - Formato correto: "7777:controle;origem;destino;crc;mensagem"
+   - ACK/NACK/naoexiste sendo recebidos
+
+3. Fila está funcionando:
+   - Máximo de 10 mensagens
+   - Mensagens sendo removidas após ACK
+   - Retransmissão após NACK
+
+PASSO 5: TESTES DE ESTRESSE
+--------------------------
+1. Envie muitas mensagens rapidamente:
+   No terminal do Bob:
+   - Digite 1 várias vezes
+   - Envie mensagens para diferentes destinos
+   - Observe o comportamento da fila
+
+2. Teste com mensagens longas:
+   - Envie uma mensagem com mais de 100 caracteres
+   - Verifique se a transmissão é correta
+
+3. Teste com diferentes tempos:
+   - Feche todos os terminais
+   - Modifique o tempo do token no config.txt
+   - Reinicie os nós
+   - Observe o comportamento
+
+PASSO 6: ENCERRAMENTO
+--------------------
+Para encerrar a simulação:
+1. Em cada terminal, digite 3 (Sair)
+2. Ou use Ctrl+C em cada terminal
+3. Feche os terminais
+
+SOLUÇÃO DE PROBLEMAS COMUNS
+--------------------------
+1. Se o token não circular:
+   - Verifique se todos os nós estão rodando
+   - Confirme as portas nos config.txt
+   - Reinicie os nós
+
+2. Se mensagens não chegarem:
+   - Verifique se o token está circulando
+   - Confirme os apelidos digitados
+   - Verifique os logs de erro
+
+3. Se houver muitos erros CRC:
+   - A probabilidade padrão é 20%
+   - Pode ser ajustada no código
+   - Verifique os logs de NACK
+
+OBSERVAÇÕES IMPORTANTES
+----------------------
+- O projeto usa localhost (127.0.0.1)
+- Portas: Bob (6000), Mary (6001), John (6002)
+- Tempo do token configurável em config.txt
+- Probabilidade de erro: 20% por padrão 
