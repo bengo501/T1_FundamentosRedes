@@ -17,6 +17,11 @@ PASSO 1: PREPARAÇÃO DOS TERMINAIS
    cd C:\Users\joxto\Downloads\T1_FundamentosRedes\rede_em_anel_simulacao
    ```
 
+   ex: 
+    cd C:\Users\joxto\Downloads\T1_FundamentosRedes\rede_em_anel_simulacao\John
+    cd C:\Users\joxto\Downloads\T1_FundamentosRedes\rede_em_anel_simulacao\Mary
+    cd C:\Users\joxto\Downloads\T1_FundamentosRedes\rede_em_anel_simulacao\Bob
+
 PASSO 2: INICIANDO OS NÓS
 -------------------------
 Terminal 1 (Bob - Gerador de Token):
