@@ -1,4 +1,0 @@
-2025-05-21 16:08:00,293 - INFO - Iniciando nó Mary em 127.0.0.1:6001
-2025-05-21 16:09:37,253 - INFO - [Fila] Mensagem adicionada: 16:09:37 | Mary -> Bob: oss
-2025-05-21 16:10:02,808 - INFO - Encerrando aplicação...
-2025-05-21 16:10:02,809 - ERROR - Erro na interface: 

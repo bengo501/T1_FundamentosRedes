@@ -1,0 +1,85 @@
+2025-05-21 17:32:44,808 - INFO - Iniciando nó Bob em 127.0.0.1:6001
+2025-05-21 17:32:44,808 - INFO - [Bob] Receptor ativo em 127.0.0.1:6001
+2025-05-21 17:32:44,808 - INFO - [Bob] Aguardando mensagens e tokens...
+2025-05-21 17:32:44,808 - INFO - [Bob] Próximo nó: 127.0.0.1:6001
+2025-05-21 17:32:44,824 - INFO - [Bob] Nó Bob adicionado ao mapeamento: 127.0.0.1:6001
+2025-05-21 17:32:44,824 - INFO - [Mary] Nó Mary adicionado ao mapeamento: 127.0.0.1:6001
+2025-05-21 17:32:44,824 - INFO - [John] Nó John adicionado ao mapeamento: 127.0.0.1:6002
+2025-05-21 17:32:49,844 - INFO - [Bob] ⚠️ TIMEOUT! Regenerando token...
+2025-05-21 17:32:49,845 - INFO - [Bob] Última passagem do token: 5.04s atrás
+2025-05-21 17:32:49,848 - INFO - [Bob] ✅ Token recebido - Pronto para enviar mensagens
+2025-05-21 17:32:49,850 - INFO - [Bob] Nenhuma mensagem. Enviando token.
+2025-05-21 17:32:49,852 - INFO - [Bob] ⚠️ ALERTA: Token recebido muito rápido!
+2025-05-21 17:32:49,852 - INFO - [Bob] Tempo desde último token: 0.00s
+2025-05-21 17:32:54,879 - INFO - [Bob] ⚠️ TIMEOUT! Regenerando token...
+2025-05-21 17:32:54,879 - INFO - [Bob] Última passagem do token: 5.03s atrás
+2025-05-21 17:32:54,879 - INFO - [Bob] ✅ Token recebido - Pronto para enviar mensagens
+2025-05-21 17:32:54,879 - INFO - [Bob] Nenhuma mensagem. Enviando token.
+2025-05-21 17:32:54,885 - INFO - [Bob] ⚠️ ALERTA: Token recebido muito rápido!
+2025-05-21 17:32:54,885 - INFO - [Bob] Tempo desde último token: 0.01s
+2025-05-21 17:32:59,916 - INFO - [Bob] ⚠️ TIMEOUT! Regenerando token...
+2025-05-21 17:32:59,916 - INFO - [Bob] Última passagem do token: 5.03s atrás
+2025-05-21 17:32:59,916 - INFO - [Bob] ✅ Token recebido - Pronto para enviar mensagens
+2025-05-21 17:32:59,916 - INFO - [Bob] Nenhuma mensagem. Enviando token.
+2025-05-21 17:32:59,920 - INFO - [Bob] ⚠️ ALERTA: Token recebido muito rápido!
+2025-05-21 17:32:59,922 - INFO - [Bob] Tempo desde último token: 0.00s
+2025-05-21 17:33:04,952 - INFO - [Bob] ⚠️ TIMEOUT! Regenerando token...
+2025-05-21 17:33:04,952 - INFO - [Bob] Última passagem do token: 5.03s atrás
+2025-05-21 17:33:04,952 - INFO - [Bob] ✅ Token recebido - Pronto para enviar mensagens
+2025-05-21 17:33:04,952 - INFO - [Bob] Nenhuma mensagem. Enviando token.
+2025-05-21 17:33:04,952 - INFO - [Bob] ⚠️ ALERTA: Token recebido muito rápido!
+2025-05-21 17:33:04,952 - INFO - [Bob] Tempo desde último token: 0.00s
+2025-05-21 17:33:09,990 - INFO - [Bob] ⚠️ TIMEOUT! Regenerando token...
+2025-05-21 17:33:09,990 - INFO - [Bob] Última passagem do token: 5.04s atrás
+2025-05-21 17:33:09,990 - INFO - [Bob] ✅ Token recebido - Pronto para enviar mensagens
+2025-05-21 17:33:09,990 - INFO - [Bob] Nenhuma mensagem. Enviando token.
+2025-05-21 17:33:09,990 - INFO - [Bob] ⚠️ ALERTA: Token recebido muito rápido!
+2025-05-21 17:33:09,990 - INFO - [Bob] Tempo desde último token: 0.00s
+2025-05-21 17:33:12,751 - ERROR - Erro na interface: name 'enviar_mensagem_usuario' is not defined
+2025-05-21 17:33:14,769 - ERROR - Erro na interface: name 'enviar_mensagem_usuario' is not defined
+2025-05-21 17:33:15,024 - INFO - [Bob] ⚠️ TIMEOUT! Regenerando token...
+2025-05-21 17:33:15,025 - INFO - [Bob] Última passagem do token: 5.04s atrás
+2025-05-21 17:33:15,027 - INFO - [Bob] ✅ Token recebido - Pronto para enviar mensagens
+2025-05-21 17:33:15,027 - INFO - [Bob] Nenhuma mensagem. Enviando token.
+2025-05-21 17:33:15,027 - INFO - [Bob] ⚠️ ALERTA: Token recebido muito rápido!
+2025-05-21 17:33:15,030 - INFO - [Bob] Tempo desde último token: 0.00s
+2025-05-21 17:33:20,059 - INFO - [Bob] ⚠️ TIMEOUT! Regenerando token...
+2025-05-21 17:33:20,059 - INFO - [Bob] Última passagem do token: 5.03s atrás
+2025-05-21 17:33:20,059 - INFO - [Bob] ✅ Token recebido - Pronto para enviar mensagens
+2025-05-21 17:33:20,059 - INFO - [Bob] Nenhuma mensagem. Enviando token.
+2025-05-21 17:33:20,059 - INFO - [Bob] ⚠️ ALERTA: Token recebido muito rápido!
+2025-05-21 17:33:20,059 - INFO - [Bob] Tempo desde último token: 0.00s
+2025-05-21 17:33:25,085 - INFO - [Bob] ⚠️ TIMEOUT! Regenerando token...
+2025-05-21 17:33:25,085 - INFO - [Bob] Última passagem do token: 5.03s atrás
+2025-05-21 17:33:25,085 - INFO - [Bob] ✅ Token recebido - Pronto para enviar mensagens
+2025-05-21 17:33:25,085 - INFO - [Bob] Nenhuma mensagem. Enviando token.
+2025-05-21 17:33:25,085 - INFO - [Bob] ⚠️ ALERTA: Token recebido muito rápido!
+2025-05-21 17:33:25,085 - INFO - [Bob] Tempo desde último token: 0.00s
+2025-05-21 17:33:30,109 - INFO - [Bob] ⚠️ TIMEOUT! Regenerando token...
+2025-05-21 17:33:30,109 - INFO - [Bob] Última passagem do token: 5.02s atrás
+2025-05-21 17:33:30,109 - INFO - [Bob] ✅ Token recebido - Pronto para enviar mensagens
+2025-05-21 17:33:30,109 - INFO - [Bob] Nenhuma mensagem. Enviando token.
+2025-05-21 17:33:30,109 - INFO - [Bob] ⚠️ ALERTA: Token recebido muito rápido!
+2025-05-21 17:33:30,109 - INFO - [Bob] Tempo desde último token: 0.00s
+2025-05-21 17:33:35,143 - INFO - [Bob] ⚠️ TIMEOUT! Regenerando token...
+2025-05-21 17:33:35,144 - INFO - [Bob] Última passagem do token: 5.04s atrás
+2025-05-21 17:33:35,144 - INFO - [Bob] ✅ Token recebido - Pronto para enviar mensagens
+2025-05-21 17:33:35,144 - INFO - [Bob] Nenhuma mensagem. Enviando token.
+2025-05-21 17:33:35,144 - INFO - [Bob] ⚠️ ALERTA: Token recebido muito rápido!
+2025-05-21 17:33:35,144 - INFO - [Bob] Tempo desde último token: 0.00s
+2025-05-21 17:33:40,175 - INFO - [Bob] ⚠️ TIMEOUT! Regenerando token...
+2025-05-21 17:33:40,175 - INFO - [Bob] Última passagem do token: 5.03s atrás
+2025-05-21 17:33:40,175 - INFO - [Bob] ✅ Token recebido - Pronto para enviar mensagens
+2025-05-21 17:33:40,175 - INFO - [Bob] Nenhuma mensagem. Enviando token.
+2025-05-21 17:33:40,180 - INFO - [Bob] ⚠️ ALERTA: Token recebido muito rápido!
+2025-05-21 17:33:40,180 - INFO - [Bob] Tempo desde último token: 0.00s
+2025-05-21 17:33:45,211 - INFO - [Bob] ⚠️ TIMEOUT! Regenerando token...
+2025-05-21 17:33:45,211 - INFO - [Bob] Última passagem do token: 5.03s atrás
+2025-05-21 17:33:45,211 - INFO - [Bob] ✅ Token recebido - Pronto para enviar mensagens
+2025-05-21 17:33:45,211 - INFO - [Bob] Nenhuma mensagem. Enviando token.
+2025-05-21 17:33:45,211 - INFO - [Bob] ⚠️ ALERTA: Token recebido muito rápido!
+2025-05-21 17:33:45,217 - INFO - [Bob] Tempo desde último token: 0.00s
+2025-05-21 17:33:50,248 - INFO - [Bob] ⚠️ TIMEOUT! Regenerando token...
+2025-05-21 17:33:50,248 - INFO - Encerrando aplicação...
+2025-05-21 17:33:50,248 - ERROR - Erro na interface: 
+2025-05-21 17:33:50,248 - INFO - [Bob] Última passagem do token: 5.04s atrás
