@@ -18,6 +18,11 @@ PASSO 1: PREPARAÇÃO DOS TERMINAIS
    ```
 
    ex: 
+    cd C:\Users\joxto\Downloads\T1_FundamentosRedes\rede_em_anel_simulacao
+    cd C:\Users\joxto\Downloads\T1_FundamentosRedes\rede_em_anel_simulacao\Computer1
+    cd C:\Users\joxto\Downloads\T1_FundamentosRedes\rede_em_anel_simulacao\Computer2
+    cd C:\Users\joxto\Downloads\T1_FundamentosRedes\rede_em_anel_simulacao\Computer3
+
     cd C:\Users\joxto\Downloads\T1_FundamentosRedes\rede_em_anel_simulacao\John
     cd C:\Users\joxto\Downloads\T1_FundamentosRedes\rede_em_anel_simulacao\Mary
     cd C:\Users\joxto\Downloads\T1_FundamentosRedes\rede_em_anel_simulacao\Bob
