@@ -1,0 +1,42 @@
+import socket
+import threading
+import time
+import random
+import zlib
+import sys
+import os
+from datetime import datetime
+import logging
+
+# ================================
+# CONFIGURAÇÕES INICIAIS
+# ================================
+def carregar_configuracao():
+    """
+    Carrega as configurações do arquivo config.txt
+    Retorna: IP de destino, porta, apelido, tempo do token e flag de gerador
+    """
+    with open('config.txt') as arquivo:
+        linhas = arquivo.read().splitlines()
+        ip_destino, porta = linhas[0].split(":")
+        apelido = linhas[1]
+        tempo_token = int(linhas[2])
+        gerar_token = linhas[3].strip().lower() == 'true'
+        porta = int(porta)
+        print(f"Configuração carregada: IP={ip_destino}, Porta={porta}, Apelido={apelido}, Tempo={tempo_token}, Gerador={gerar_token}")
+    return ip_destino, porta, apelido, tempo_token, gerar_token
+
+# Carrega configurações do arquivo
+ip_destino, porta_destino, apelido, tempo_token, gerar_token = carregar_configuracao()
+
+# Configuração de logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler(f"logs_{apelido}.log", mode='w', encoding="utf-8"),  # 'w' para sobrescrever o arquivo
+        logging.StreamHandler()
+    ]
+)
+
+# ... existing code ... 
