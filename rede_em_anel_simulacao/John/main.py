@@ -6,6 +6,17 @@ import zlib
 import sys
 import os
 from datetime import datetime
+import logging
+
+# Configuração de logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler("logs_rede.log", encoding="utf-8"),
+        logging.StreamHandler()
+    ]
+)
 
 # ================================
 # CONFIGURAÇÕES INICIAIS
@@ -100,6 +111,95 @@ def registrar_log(mensagem: str):
     """
     timestamp = datetime.now().strftime("%H:%M:%S")
     print(f"[{timestamp}] {mensagem}")
+
+def limpar_tela():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+def mostrar_menu():
+    limpar_tela()
+    print("\n" + "="*50)
+    print("REDE EM ANEL - SIMULAÇÃO".center(50))
+    print("="*50)
+    print(f"\nNó: {apelido}")
+    print(f"IP Local: {ip_local}:{porta_local}")
+    print(f"Próximo nó: {ip_destino}:{porta_destino}")
+    print(f"Gerador de token: {'Sim' if gerar_token else 'Não'}")
+    print("\n" + "="*50)
+    print("\nOpções:")
+    print("1. Enviar mensagem")
+    print("2. Ver fila atual")
+    print("3. Ver logs")
+    print("4. Sair")
+    print("\n" + "="*50)
+
+def enviar_mensagem():
+    print("\nDestino (apelido ou TODOS): ", end="")
+    destino = input().strip()
+    print("Mensagem: ", end="")
+    mensagem = input().strip()
+    
+    if len(fila_mensagens) >= 10:
+        logging.warning("Fila cheia! Máximo de 10 mensagens atingido.")
+        print("\nErro: Fila cheia! Máximo de 10 mensagens atingido.")
+        input("\nPressione Enter para continuar...")
+        return
+    
+    timestamp = datetime.now().strftime("%H:%M:%S")
+    mensagem_completa = f"{timestamp} | {apelido} -> {destino}: {mensagem}"
+    with mutex:
+        fila_mensagens.append((destino, mensagem_completa, False))
+        logging.info(f"[Fila] Mensagem adicionada: {mensagem_completa}")
+        print(f"\n[Fila] Mensagem adicionada.")
+
+def ver_fila():
+    print("\n" + "="*50)
+    print("FILA DE MENSAGENS".center(50))
+    print("="*50)
+    if not fila_mensagens:
+        print("\nFila vazia")
+    else:
+        print("\nMensagens pendentes:")
+        for i, (dest, msg, reenv) in enumerate(fila_mensagens, 1):
+            print(f"{i}. Para: {dest} | Mensagem: {msg} | Reenviado: {reenv}")
+    print("\n" + "="*50)
+    input("\nPressione Enter para continuar...")
+
+def ver_logs():
+    print("\n" + "="*50)
+    print("LOGS DO SISTEMA".center(50))
+    print("="*50)
+    try:
+        with open("logs_rede.log", "r", encoding="utf-8") as f:
+            logs = f.readlines()[-20:]  # Mostra últimos 20 logs
+            for log in logs:
+                print(log.strip())
+    except Exception as e:
+        print(f"\nErro ao ler logs: {e}")
+    print("\n" + "="*50)
+    input("\nPressione Enter para continuar...")
+
+def interface_usuario():
+    while True:
+        mostrar_menu()
+        try:
+            opcao = input("\nEscolha uma opção: ")
+            if opcao == "1":
+                enviar_mensagem()
+            elif opcao == "2":
+                ver_fila()
+            elif opcao == "3":
+                ver_logs()
+            elif opcao == "4":
+                logging.info("Encerrando aplicação...")
+                print("\nEncerrando aplicação...")
+                break
+            else:
+                print("\nOpção inválida!")
+                input("\nPressione Enter para continuar...")
+        except Exception as e:
+            logging.error(f"Erro na interface: {e}")
+            print(f"\nErro: {e}")
+            input("\nPressione Enter para continuar...")
 
 # ================================
 # THREAD DE RECEPÇÃO
@@ -206,66 +306,34 @@ def gerenciador():
             registrar_log(f"[ERRO] Falha no gerenciador: {erro}")
 
 # ================================
-# INTERFACE DE MENSAGENS
-# ================================
-def interface():
-    """
-    Interface principal do programa
-    Permite enviar mensagens e visualizar a fila
-    """
-    while True:
-        try:
-            print("\nOpções:")
-            print("1. Enviar mensagem")
-            print("2. Ver fila atual")
-            print("3. Sair")
-            opcao = input("Escolha uma opção: ")
-
-            if opcao == "1":
-                destino = input("Destino (apelido ou TODOS): ")
-                texto = input("Mensagem: ")
-                with mutex:
-                    if len(fila_mensagens) < 10:
-                        fila_mensagens.append((destino, texto, False))
-                        registrar_log("[Fila] Mensagem adicionada.")
-                    else:
-                        registrar_log("[Fila] Limite atingido (máx 10 mensagens).")
-            elif opcao == "2":
-                with mutex:
-                    if fila_mensagens:
-                        print("\nFila atual:")
-                        for i, (dest, msg, reenv) in enumerate(fila_mensagens, 1):
-                            print(f"{i}. Para: {dest} | Mensagem: {msg} | Reenviado: {reenv}")
-                    else:
-                        print("\nFila vazia")
-            elif opcao == "3":
-                registrar_log("Encerrando aplicação...")
-                os._exit(0)
-            else:
-                print("Opção inválida!")
-        except Exception as erro:
-            registrar_log(f"[ERRO] Falha na interface: {erro}")
-
-# ================================
 # INICIALIZAÇÃO
 # ================================
 if __name__ == "__main__":
     try:
-        print(f"\n=== Rede em Anel - {apelido} ===")
-        print(f"IP Local: {ip_local}:{porta_local}")
-        print(f"Próximo nó: {ip_destino}:{porta_destino}")
-        print(f"Gerador de token: {'Sim' if gerar_token else 'Não'}")
-        print("==============================\n")
-
-        # Inicia threads
-        threading.Thread(target=receptor, daemon=True).start()
-        threading.Thread(target=gerenciador, daemon=True).start()
+        logging.info(f"Iniciando nó {apelido} em {ip_local}:{porta_local}")
         
-        # Inicia interface principal
-        interface()
+        # Inicia threads
+        thread_receptor = threading.Thread(target=receptor)
+        thread_gerenciador = threading.Thread(target=gerenciador)
+        thread_interface = threading.Thread(target=interface_usuario)
+        
+        thread_receptor.daemon = True
+        thread_gerenciador.daemon = True
+        thread_interface.daemon = True
+        
+        thread_receptor.start()
+        thread_gerenciador.start()
+        thread_interface.start()
+        
+        # Mantém o programa rodando
+        while True:
+            time.sleep(1)
     except KeyboardInterrupt:
-        registrar_log("\nEncerrando aplicação...")
-        sys.exit(0)
-    except Exception as erro:
-        registrar_log(f"[ERRO] Falha fatal: {erro}")
-        sys.exit(1) 
+        logging.info("Encerrando aplicação...")
+        print("\nEncerrando aplicação...")
+    except Exception as e:
+        logging.error(f"Erro fatal: {e}")
+        print(f"\nErro fatal: {e}")
+    finally:
+        if 'socket_udp' in locals():
+            socket_udp.close() 
