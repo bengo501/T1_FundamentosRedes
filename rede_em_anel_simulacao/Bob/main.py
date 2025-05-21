@@ -110,7 +110,8 @@ def registrar_log(mensagem: str):
         mensagem: Texto a ser registrado
     """
     timestamp = datetime.now().strftime("%H:%M:%S")
-    print(f"[{timestamp}] {mensagem}")
+    print(f"\n[{timestamp}] {mensagem}")
+    logging.info(mensagem)
 
 def limpar_tela():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -213,6 +214,7 @@ def receptor():
     socket_udp = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     socket_udp.bind((ip_local, porta_local))
     registrar_log(f"[{apelido}] Receptor ativo em {ip_local}:{porta_local}")
+    registrar_log(f"[{apelido}] Aguardando mensagens e tokens...")
 
     while True:
         try:
@@ -230,7 +232,7 @@ def receptor():
                     
                     token_presente = True
                     ultima_passagem_token = tempo_atual
-                    registrar_log(f"[{apelido}] Token recebido")
+                    registrar_log(f"[{apelido}] Token recebido - Pronto para enviar mensagens")
 
             elif mensagem.startswith("7777:"):  # Pacote de dados
                 _, conteudo = mensagem.split(":", 1)
@@ -239,7 +241,11 @@ def receptor():
                 if destino == apelido or destino == "TODOS":
                     crc_recalculado = calcular_crc(texto)
                     if int(crc) == crc_recalculado:
-                        registrar_log(f"[{apelido}] Mensagem de {origem}: {texto} [CRC OK]")
+                        print("\n" + "="*50)
+                        registrar_log(f"[{apelido}] MENSAGEM RECEBIDA de {origem}:")
+                        registrar_log(f"Conteúdo: {texto}")
+                        registrar_log(f"Status: CRC OK")
+                        print("="*50 + "\n")
                         resposta = f"7777:ACK;{origem};{apelido};{crc};{texto}"
                     else:
                         registrar_log(f"[{apelido}] Erro de CRC! Enviando NACK para {origem}")
@@ -262,6 +268,7 @@ def receptor():
                                     fila_mensagens[0] = (destino, texto, False)
                                     registrar_log(f"[{apelido}] NACK duplo. Mensagem descartada.")
                 else:
+                    registrar_log(f"[{apelido}] Repassando mensagem para {ip_destino}:{porta_destino}")
                     enviar_mensagem(ip_destino, porta_destino, mensagem)
 
         except Exception as erro:
@@ -295,8 +302,9 @@ def gerenciador():
                             mensagem_pronta = inserir_erro(texto)
                         crc = calcular_crc(mensagem_pronta)
                         pacote = f"7777:{controle};{apelido};{destino};{crc};{mensagem_pronta}"
+                        registrar_log(f"[{apelido}] Enviando mensagem para {destino}")
                         enviar_mensagem(ip_destino, porta_destino, pacote)
-                        registrar_log(f"[{apelido}] Enviando para {destino}: {mensagem_pronta} [{controle}]")
+                        registrar_log(f"[{apelido}] Mensagem enviada: {mensagem_pronta}")
                     else:
                         registrar_log(f"[{apelido}] Nenhuma mensagem. Enviando token.")
                         enviar_mensagem(ip_destino, porta_destino, "9000")
