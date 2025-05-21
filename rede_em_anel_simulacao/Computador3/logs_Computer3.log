@@ -1,0 +1,7 @@
+2025-05-21 18:18:09,956 - INFO - Iniciando nó John em 127.0.0.1:6002
+2025-05-21 18:18:09,960 - INFO - [John] Receptor ativo em 127.0.0.1:6002
+2025-05-21 18:18:09,960 - INFO - [John] Aguardando mensagens e tokens...
+2025-05-21 18:18:09,960 - INFO - [John] Próximo nó: 127.0.0.1:6002
+2025-05-21 18:18:09,960 - INFO - [John] Nó John adicionado ao mapeamento: 127.0.0.1:6002
+2025-05-21 18:18:59,548 - INFO - Encerrando aplicação...
+2025-05-21 18:18:59,548 - ERROR - Erro na interface: 
