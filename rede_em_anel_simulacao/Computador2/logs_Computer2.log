@@ -1,3 +1,6 @@
-2025-05-21 18:17:48,222 - INFO - Iniciando nó Mary em 127.0.0.1:6001
-2025-05-21 18:18:52,313 - INFO - Encerrando aplicação...
-2025-05-21 18:18:52,313 - ERROR - Erro na interface: 
+2025-05-21 18:56:52,189 - INFO - Iniciando nó Computador2 em 127.0.0.1:6002
+2025-05-21 18:56:52,199 - INFO - [Computador2] Receptor ativo em 127.0.0.1:6002
+2025-05-21 18:56:52,199 - INFO - [Computador2] Aguardando mensagens e tokens...
+2025-05-21 18:56:52,199 - INFO - [Computador2] Próximo nó: 127.0.0.1:6002
+2025-05-21 18:56:52,199 - INFO - [Computador2] Nó Computador2 adicionado ao mapeamento: 127.0.0.1:6002
+2025-05-21 18:56:52,201 - INFO - [Computador2] Enviando mensagem de descoberta para 127.0.0.1:6002

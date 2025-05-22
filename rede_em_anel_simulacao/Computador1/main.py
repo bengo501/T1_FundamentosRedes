@@ -34,8 +34,7 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler(f"logs_Computer1.log", mode='w', encoding="utf-8"),  # 'w' para sobrescrever o arquivo
-        logging.StreamHandler()
+        logging.FileHandler(f"logs_Computer1.log", mode='w', encoding="utf-8")
     ]
 )
 
@@ -102,7 +101,7 @@ def enviar_udp(ip: str, porta: int, mensagem: str):
     except Exception as erro:
         print(f"[ERRO] Falha ao enviar mensagem: {erro}")
 
-def registrar_log(mensagem: str, mostrar_terminal: bool = True):
+def registrar_log(mensagem: str, mostrar_terminal: bool = False):
     """
     Registra mensagem com timestamp
     Args:
@@ -160,31 +159,33 @@ def mostrar_menu():
     print("5. Sair")
     print("\n" + "="*50)
 
-def interface_usuario():
-    while True:
-        try:
-            mostrar_menu()
-            opcao = input("\nEscolha uma opção: ")
-            if opcao == "1":
-                enviar_mensagem_usuario()
-            elif opcao == "2":
-                ver_fila()
-            elif opcao == "3":
-                ver_logs()
-            elif opcao == "4":
-                mostrar_status_rede()
-                input("\nPressione Enter para continuar...")
-            elif opcao == "5":
-                logging.info("Encerrando aplicação...")
-                print("\nEncerrando aplicação...")
-                break
-            else:
-                print("\nOpção inválida!")
-                input("\nPressione Enter para continuar...")
-        except Exception as e:
-            logging.error(f"Erro na interface: {str(e)}")
-            print(f"\nErro: {str(e)}")
-            input("\nPressione Enter para continuar...")
+def enviar_mensagem_usuario():
+    print("\nDestino (apelido ou TODOS): ", end="")
+    destino = input().strip()
+    
+    # Valida se o destino existe
+    if destino != "TODOS" and destino not in nos_ativos:
+        print(f"\nErro: Destino '{destino}' não existe na rede!")
+        print("Destinos disponíveis:", ", ".join(sorted(nos_ativos)))
+        input("\nPressione Enter para continuar...")
+        return
+    
+    print("Mensagem: ", end="")
+    mensagem = input().strip()
+    
+    if len(fila_mensagens) >= 10:
+        logging.warning("Fila cheia! Máximo de 10 mensagens atingido.")
+        print("\nErro: Fila cheia! Máximo de 10 mensagens atingido.")
+        input("\nPressione Enter para continuar...")
+        return
+    
+    timestamp = datetime.now().strftime("%H:%M:%S")
+    mensagem_completa = f"{timestamp} | {apelido} -> {destino}: {mensagem}"
+    with mutex:
+        fila_mensagens.append((destino, mensagem_completa, False))
+        logging.info(f"[Fila] Mensagem adicionada: {mensagem_completa}")
+        print(f"\n[Fila] Mensagem adicionada.")
+        input("\nPressione Enter para continuar...")
 
 def ver_fila():
     print("\n" + "="*50)
@@ -213,6 +214,32 @@ def ver_logs():
     print("\n" + "="*50)
     input("\nPressione Enter para continuar...")
 
+def interface_usuario():
+    while True:
+        try:
+            mostrar_menu()
+            opcao = input("\nEscolha uma opção: ")
+            if opcao == "1":
+                enviar_mensagem_usuario()
+            elif opcao == "2":
+                ver_fila()
+            elif opcao == "3":
+                ver_logs()
+            elif opcao == "4":
+                mostrar_status_rede()
+                input("\nPressione Enter para continuar...")
+            elif opcao == "5":
+                logging.info("Encerrando aplicação...")
+                print("\nEncerrando aplicação...")
+                break
+            else:
+                print("\nOpção inválida!")
+                input("\nPressione Enter para continuar...")
+        except Exception as e:
+            logging.error(f"Erro na interface: {str(e)}")
+            print(f"\nErro: {str(e)}")
+            input("\nPressione Enter para continuar...")
+
 # ================================
 # THREAD DE RECEPÇÃO
 # ================================
@@ -231,12 +258,26 @@ def receptor():
     # Adiciona o próprio nó ao mapeamento
     atualizar_mapeamento(apelido, ip_local, porta_local)
 
+    # Envia mensagem de descoberta para o próximo nó
+    mensagem_descoberta = f"DISCOVER:{apelido}:{ip_local}:{porta_local}"
+    enviar_udp(ip_destino, porta_destino, mensagem_descoberta)
+    registrar_log(f"[{apelido}] Enviando mensagem de descoberta para {ip_destino}:{porta_destino}")
+
     while True:
         try:
             dados, endereco = socket_udp.recvfrom(2048)
             mensagem = dados.decode()
 
-            if mensagem == "9000":  # Token
+            if mensagem.startswith("DISCOVER:"):  # Mensagem de descoberta
+                _, nome, ip, porta = mensagem.split(":")
+                porta = int(porta)
+                if nome != apelido:  # Ignora mensagens próprias
+                    atualizar_mapeamento(nome, ip, porta)
+                    registrar_log(f"[{apelido}] Nó descoberto: {nome} ({ip}:{porta})")
+                    # Repassa a mensagem de descoberta
+                    enviar_udp(ip_destino, porta_destino, mensagem)
+
+            elif mensagem == "9000":  # Token
                 with lock_token:
                     tempo_atual = time.time()
                     tempo_passado = tempo_atual - ultima_passagem_token
