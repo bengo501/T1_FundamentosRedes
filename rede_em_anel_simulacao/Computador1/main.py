@@ -48,7 +48,7 @@ nos_ativos = set()  # Conjunto de nós ativos na rede
 
 # Configuração de rede
 ip_local = "127.0.0.1"  # Usando localhost para teste
-porta_local = porta_destino
+porta_local = 6000  # Porta fixa para o Computador1
 
 # Mapeamento de apelidos para IPs e portas
 mapeamento_apelidos = {
@@ -158,8 +158,13 @@ def mostrar_menu():
     print("4. Ver status da rede")
     print("5. Sair")
     print("\n" + "="*50)
+    print("\nEscolha uma opção: ", end="")
 
 def enviar_mensagem_usuario():
+    limpar_tela()
+    print("\n" + "="*50)
+    print("ENVIAR MENSAGEM".center(50))
+    print("="*50)
     print("\nDestino (apelido ou TODOS): ", end="")
     destino = input().strip()
     
@@ -174,7 +179,6 @@ def enviar_mensagem_usuario():
     mensagem = input().strip()
     
     if len(fila_mensagens) >= 10:
-        logging.warning("Fila cheia! Máximo de 10 mensagens atingido.")
         print("\nErro: Fila cheia! Máximo de 10 mensagens atingido.")
         input("\nPressione Enter para continuar...")
         return
@@ -184,7 +188,7 @@ def enviar_mensagem_usuario():
     with mutex:
         fila_mensagens.append((destino, mensagem_completa, False))
         logging.info(f"[Fila] Mensagem adicionada: {mensagem_completa}")
-        print(f"\n[Fila] Mensagem adicionada.")
+        print(f"\nMensagem adicionada à fila.")
         input("\nPressione Enter para continuar...")
 
 def ver_fila():
@@ -218,7 +222,7 @@ def interface_usuario():
     while True:
         try:
             mostrar_menu()
-            opcao = input("\nEscolha uma opção: ")
+            opcao = input()
             if opcao == "1":
                 enviar_mensagem_usuario()
             elif opcao == "2":
@@ -251,9 +255,9 @@ def receptor():
     global token_presente, ultima_passagem_token, fila_mensagens
     socket_udp = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     socket_udp.bind((ip_local, porta_local))
-    registrar_log(f"[{apelido}] Receptor ativo em {ip_local}:{porta_local}")
-    registrar_log(f"[{apelido}] Aguardando mensagens e tokens...")
-    registrar_log(f"[{apelido}] Próximo nó: {ip_destino}:{porta_destino}")
+    logging.info(f"[{apelido}] Receptor ativo em {ip_local}:{porta_local}")
+    logging.info(f"[{apelido}] Aguardando mensagens e tokens...")
+    logging.info(f"[{apelido}] Próximo nó: {ip_destino}:{porta_destino}")
 
     # Adiciona o próprio nó ao mapeamento
     atualizar_mapeamento(apelido, ip_local, porta_local)
@@ -261,7 +265,7 @@ def receptor():
     # Envia mensagem de descoberta para o próximo nó
     mensagem_descoberta = f"DISCOVER:{apelido}:{ip_local}:{porta_local}"
     enviar_udp(ip_destino, porta_destino, mensagem_descoberta)
-    registrar_log(f"[{apelido}] Enviando mensagem de descoberta para {ip_destino}:{porta_destino}")
+    logging.info(f"[{apelido}] Enviando mensagem de descoberta para {ip_destino}:{porta_destino}")
 
     while True:
         try:
@@ -273,7 +277,7 @@ def receptor():
                 porta = int(porta)
                 if nome != apelido:  # Ignora mensagens próprias
                     atualizar_mapeamento(nome, ip, porta)
-                    registrar_log(f"[{apelido}] Nó descoberto: {nome} ({ip}:{porta})")
+                    logging.info(f"[{apelido}] Nó descoberto: {nome} ({ip}:{porta})")
                     # Repassa a mensagem de descoberta
                     enviar_udp(ip_destino, porta_destino, mensagem)
 
@@ -283,13 +287,13 @@ def receptor():
                     tempo_passado = tempo_atual - ultima_passagem_token
                     
                     if tempo_passado < tempo_minimo_token:
-                        registrar_log(f"[{apelido}] ⚠️ ALERTA: Token recebido muito rápido!", mostrar_terminal=False)
-                        registrar_log(f"[{apelido}] Tempo desde último token: {tempo_passado:.2f}s", mostrar_terminal=False)
+                        logging.warning(f"[{apelido}] ⚠️ ALERTA: Token recebido muito rápido!")
+                        logging.warning(f"[{apelido}] Tempo desde último token: {tempo_passado:.2f}s")
                         continue
                     
                     token_presente = True
                     ultima_passagem_token = tempo_atual
-                    registrar_log(f"[{apelido}] ✅ Token recebido - Pronto para enviar mensagens", mostrar_terminal=False)
+                    logging.info(f"[{apelido}] ✅ Token recebido - Pronto para enviar mensagens")
 
             elif mensagem.startswith("7777:"):  # Pacote de dados
                 _, conteudo = mensagem.split(":", 1)
@@ -302,7 +306,7 @@ def receptor():
                 # Ignora mensagens próprias
                 if origem == apelido:
                     if controle == "naoexiste":
-                        registrar_log(f"[{apelido}] Ignorando mensagem própria: {texto}")
+                        logging.info(f"[{apelido}] Ignorando mensagem própria: {texto}")
                         continue
                     else:
                         print("\n" + "="*50)
@@ -310,12 +314,12 @@ def receptor():
                         print(f"Status: {controle}")
                         print(f"Mensagem: {texto}")
                         print("="*50 + "\n")
-                        registrar_log(f"[{apelido}] Pacote retornou: {controle}")
+                        logging.info(f"[{apelido}] Pacote retornou: {controle}")
                         with mutex:
                             if fila_mensagens:
                                 if controle == "ACK" or controle == "naoexiste":
                                     fila_mensagens.pop(0)
-                                    registrar_log(f"[{apelido}] Mensagem entregue/removida.")
+                                    logging.info(f"[{apelido}] Mensagem entregue/removida.")
                                     # Após remover a mensagem, passa o token
                                     enviar_udp(ip_destino, porta_destino, "9000")
                                     token_presente = False
@@ -324,10 +328,10 @@ def receptor():
                                     destino, texto, reenviado = fila_mensagens[0]
                                     if not reenviado:
                                         fila_mensagens[0] = (destino, texto, True)
-                                        registrar_log(f"[{apelido}] NACK recebido. Será retransmitido.")
+                                        logging.info(f"[{apelido}] NACK recebido. Será retransmitido.")
                                     else:
                                         fila_mensagens[0] = (destino, texto, False)
-                                        registrar_log(f"[{apelido}] NACK duplo. Mensagem descartada.")
+                                        logging.info(f"[{apelido}] NACK duplo. Mensagem descartada.")
                                     # Passa o token mesmo com NACK
                                     enviar_udp(ip_destino, porta_destino, "9000")
                                     token_presente = False
@@ -344,7 +348,7 @@ def receptor():
                         print(f"Conteúdo: {texto}")
                         print(f"Status: CRC OK")
                         print("="*50 + "\n")
-                        registrar_log(f"[{apelido}] MENSAGEM RECEBIDA de {origem}: {texto}")
+                        logging.info(f"[{apelido}] MENSAGEM RECEBIDA de {origem}: {texto}")
                         resposta = f"7777:ACK;{origem};{apelido};{crc};{texto}"
                     else:
                         print("\n" + "="*50)
@@ -354,16 +358,16 @@ def receptor():
                         print(f"Conteúdo: {texto}")
                         print(f"Status: CRC INVÁLIDO")
                         print("="*50 + "\n")
-                        registrar_log(f"[{apelido}] Erro de CRC! Enviando NACK para {origem}")
+                        logging.info(f"[{apelido}] Erro de CRC! Enviando NACK para {origem}")
                         resposta = f"7777:NACK;{origem};{apelido};{crc};{texto}"
                     enviar_udp(*mapeamento_apelidos[origem], resposta)
 
                 else:
-                    registrar_log(f"[{apelido}] Repassando mensagem para {ip_destino}:{porta_destino}")
+                    logging.info(f"[{apelido}] Repassando mensagem para {ip_destino}:{porta_destino}")
                     enviar_udp(ip_destino, porta_destino, mensagem)
 
         except Exception as erro:
-            registrar_log(f"[ERRO] Falha na recepção: {erro}")
+            logging.error(f"[ERRO] Falha na recepção: {erro}")
 
 # ================================
 # THREAD DO GERENCIADOR
@@ -374,13 +378,21 @@ def gerenciador():
     Controla o fluxo de dados na rede em anel
     """
     global token_presente, fila_mensagens, ultima_passagem_token
+    
+    # Se for o gerador inicial, envia o primeiro token
+    if gerar_token:
+        time.sleep(2)  # Aguarda a rede estabilizar
+        logging.info(f"[{apelido}] Iniciando circulação do token...")
+        enviar_udp(ip_destino, porta_destino, "9000")
+        ultima_passagem_token = time.time()
+    
     while True:
         try:
             with mutex:
                 # Verifica timeout do token
                 if gerar_token and time.time() - ultima_passagem_token > tempo_maximo_token:
-                    registrar_log(f"[{apelido}] ⚠️ TIMEOUT! Regenerando token...", mostrar_terminal=False)
-                    registrar_log(f"[{apelido}] Última passagem do token: {time.time() - ultima_passagem_token:.2f}s atrás", mostrar_terminal=False)
+                    logging.warning(f"[{apelido}] ⚠️ TIMEOUT! Regenerando token...")
+                    logging.warning(f"[{apelido}] Última passagem do token: {time.time() - ultima_passagem_token:.2f}s atrás")
                     enviar_udp(ip_destino, porta_destino, "9000")
                     ultima_passagem_token = time.time()
                     continue
@@ -399,21 +411,21 @@ def gerenciador():
                         # Envia mensagem
                         crc = calcular_crc(mensagem_pronta)
                         pacote = f"7777:{controle};{apelido};{destino};{crc};{mensagem_pronta}"
-                        registrar_log(f"[{apelido}] Enviando mensagem para {destino}")
+                        logging.info(f"[{apelido}] Enviando mensagem para {destino}")
                         enviar_udp(ip_destino, porta_destino, pacote)
-                        registrar_log(f"[{apelido}] Mensagem enviada: {mensagem_pronta}")
+                        logging.info(f"[{apelido}] Mensagem enviada: {mensagem_pronta}")
                         
                         # Aguarda um tempo para a mensagem voltar
                         time.sleep(tempo_token)
                     else:
                         # Se não tem mensagem, passa o token imediatamente
-                        registrar_log(f"[{apelido}] Nenhuma mensagem. Enviando token.", mostrar_terminal=False)
+                        logging.info(f"[{apelido}] Nenhuma mensagem. Enviando token.")
                         enviar_udp(ip_destino, porta_destino, "9000")
                         token_presente = False
                         ultima_passagem_token = time.time()
             time.sleep(0.1)  # Pequena pausa para não sobrecarregar a CPU
         except Exception as erro:
-            registrar_log(f"[ERRO] Falha no gerenciador: {erro}")
+            logging.error(f"[ERRO] Falha no gerenciador: {erro}")
 
 # ================================
 # INICIALIZAÇÃO

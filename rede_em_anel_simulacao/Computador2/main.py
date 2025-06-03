@@ -48,7 +48,7 @@ nos_ativos = set()  # Conjunto de nós ativos na rede
 
 # Configuração de rede
 ip_local = "127.0.0.1"  # Usando localhost para teste
-porta_local = porta_destino
+porta_local = 6001  # Porta fixa para o Computador2
 
 # Mapeamento de apelidos para IPs e portas
 mapeamento_apelidos = {
