@@ -1,38 +1,104 @@
-2025-06-03 19:13:31,913 - INFO - Iniciando nó Computador3 em 127.0.0.1:6002
-2025-06-03 19:13:31,921 - INFO - [Computador3] Receptor ativo em 127.0.0.1:6002
-2025-06-03 19:13:31,921 - INFO - [Computador3] Aguardando mensagens e tokens...
-2025-06-03 19:13:31,921 - INFO - [Computador3] Próximo nó: 127.0.0.1:6000
-2025-06-03 19:13:31,921 - INFO - [Computador3] Nó Computador3 adicionado ao mapeamento: 127.0.0.1:6002
-2025-06-03 19:13:31,921 - INFO - [Computador3] Enviando mensagem de descoberta para 127.0.0.1:6000
-2025-06-03 19:13:32,555 - INFO - [Computador3] ✅ Token recebido - Pronto para enviar mensagens
-2025-06-03 19:13:32,624 - INFO - [Computador3] Nenhuma mensagem. Enviando token.
-2025-06-03 19:13:37,581 - INFO - [Computador3] ✅ Token recebido - Pronto para enviar mensagens
-2025-06-03 19:13:37,651 - INFO - [Computador3] Nenhuma mensagem. Enviando token.
-2025-06-03 19:13:42,611 - INFO - [Computador3] ✅ Token recebido - Pronto para enviar mensagens
-2025-06-03 19:13:42,677 - INFO - [Computador3] Nenhuma mensagem. Enviando token.
-2025-06-03 19:13:47,637 - INFO - [Computador3] ✅ Token recebido - Pronto para enviar mensagens
-2025-06-03 19:13:47,703 - INFO - [Computador3] Nenhuma mensagem. Enviando token.
-2025-06-03 19:13:52,663 - INFO - [Computador3] ✅ Token recebido - Pronto para enviar mensagens
-2025-06-03 19:13:52,730 - INFO - [Computador3] Nenhuma mensagem. Enviando token.
-2025-06-03 19:13:57,691 - INFO - [Computador3] ✅ Token recebido - Pronto para enviar mensagens
-2025-06-03 19:13:57,758 - INFO - [Computador3] Nenhuma mensagem. Enviando token.
-2025-06-03 19:14:02,720 - INFO - [Computador3] ✅ Token recebido - Pronto para enviar mensagens
-2025-06-03 19:14:02,795 - INFO - [Computador3] Nenhuma mensagem. Enviando token.
-2025-06-03 19:14:07,747 - INFO - [Computador3] ✅ Token recebido - Pronto para enviar mensagens
-2025-06-03 19:14:07,825 - INFO - [Computador3] Nenhuma mensagem. Enviando token.
-2025-06-03 19:14:12,774 - INFO - [Computador3] ✅ Token recebido - Pronto para enviar mensagens
-2025-06-03 19:14:12,852 - INFO - [Computador3] Nenhuma mensagem. Enviando token.
-2025-06-03 19:14:17,808 - INFO - [Computador3] ✅ Token recebido - Pronto para enviar mensagens
-2025-06-03 19:14:17,880 - INFO - [Computador3] Nenhuma mensagem. Enviando token.
-2025-06-03 19:14:23,437 - INFO - [Computador3] ✅ Token recebido - Pronto para enviar mensagens
-2025-06-03 19:14:23,510 - INFO - [Computador3] Nenhuma mensagem. Enviando token.
-2025-06-03 19:14:28,463 - INFO - [Computador3] ✅ Token recebido - Pronto para enviar mensagens
-2025-06-03 19:14:28,548 - INFO - [Computador3] Nenhuma mensagem. Enviando token.
-2025-06-03 19:14:33,489 - INFO - [Computador3] ✅ Token recebido - Pronto para enviar mensagens
-2025-06-03 19:14:33,574 - INFO - [Computador3] Nenhuma mensagem. Enviando token.
-2025-06-03 19:14:38,546 - INFO - [Computador3] ✅ Token recebido - Pronto para enviar mensagens
-2025-06-03 19:14:38,612 - INFO - [Computador3] Nenhuma mensagem. Enviando token.
-2025-06-03 19:14:43,572 - INFO - [Computador3] ✅ Token recebido - Pronto para enviar mensagens
-2025-06-03 19:14:43,639 - INFO - [Computador3] Nenhuma mensagem. Enviando token.
-2025-06-03 19:14:50,341 - ERROR - Erro na interface: 
-2025-06-03 19:14:50,341 - INFO - Encerrando aplicação...
+2025-06-03 20:33:54,165 - INFO - Iniciando nó Computador3 em 127.0.0.1:6002
+2025-06-03 20:33:54,173 - INFO - [Token] 🔄 Token em circulação - Receptor ativo em 127.0.0.1:6002
+2025-06-03 20:33:54,173 - INFO - [Computador3] Receptor ativo em 127.0.0.1:6002
+2025-06-03 20:33:54,173 - INFO - [Computador3] Aguardando mensagens e tokens...
+2025-06-03 20:33:54,173 - INFO - [Computador3] Próximo nó: 127.0.0.1:6000
+2025-06-03 20:33:54,173 - INFO - [Computador3] Nó Computador3 adicionado ao mapeamento: 127.0.0.1:6002
+2025-06-03 20:33:54,173 - INFO - [Computador3] Enviando mensagem de descoberta para 127.0.0.1:6000
+2025-06-03 20:33:54,180 - INFO - [Computador1] Nó Computador1 adicionado ao mapeamento: 127.0.0.1:6000
+2025-06-03 20:33:54,181 - INFO - [Computador1] Enviando atualização para Computador3
+2025-06-03 20:33:54,182 - INFO - [Computador3] Mapeamento atualizado: Computador1 (127.0.0.1:6000)
+2025-06-03 20:33:54,182 - INFO - [Computador3] Mapeamento atualizado: Computador1 (127.0.0.1:6000)
+2025-06-03 20:33:54,182 - INFO - [Computador2] Nó Computador2 adicionado ao mapeamento: 127.0.0.1:6001
+2025-06-03 20:33:54,182 - INFO - [Computador2] Enviando atualização para Computador1
+2025-06-03 20:33:54,187 - INFO - [Computador2] Enviando atualização para Computador3
+2025-06-03 20:33:54,187 - INFO - [Computador3] Mapeamento atualizado: Computador2 (127.0.0.1:6001)
+2025-06-03 20:33:54,189 - INFO - [Computador3] Mapeamento atualizado: Computador2 (127.0.0.1:6001)
+2025-06-03 20:33:54,191 - INFO - [Computador3] Mapeamento atualizado: Computador2 (127.0.0.1:6001)
+2025-06-03 20:33:57,480 - INFO - [Computador3] Status da rede: 3 nós ativos
+2025-06-03 20:34:06,078 - INFO - [Token] 📨 Token recebido de Computador2 para Computador3
+2025-06-03 20:34:06,078 - INFO - [Token] 🔢 Sequência: 0
+2025-06-03 20:34:06,078 - INFO - [Token] ⏱️ Timestamp: 2025-06-03 20:33:51.277399
+2025-06-03 20:34:06,083 - INFO - [Token] 🔄 Token em circulação - Token recebido - Pronto para enviar mensagens
+2025-06-03 20:34:06,083 - INFO - [Computador3] ✅ Token recebido - Pronto para enviar mensagens
+2025-06-03 20:34:06,139 - INFO - [Token] 🔄 Token em circulação - Nenhuma mensagem. Passando token.
+2025-06-03 20:34:06,139 - INFO - [Token] 📤 Enviando token de Computador3 para 127.0.0.1:6000
+2025-06-03 20:34:21,052 - INFO - [Token] 📨 Token recebido de Computador2 para Computador3
+2025-06-03 20:34:21,052 - INFO - [Token] 🔢 Sequência: 0
+2025-06-03 20:34:21,052 - INFO - [Token] ⏱️ Timestamp: 2025-06-03 20:33:51.277399
+2025-06-03 20:34:21,052 - WARNING - [Token] ⚠️ Token duplicado detectado!
+2025-06-03 20:34:21,052 - WARNING - [Token] 📊 Sequência: 0
+2025-06-03 20:34:21,059 - WARNING - [Token] 📊 Total de duplicados: 1
+2025-06-03 20:34:21,059 - WARNING - [Token] 🔍 Token anterior recebido em: 2025-06-03 20:33:51.277399
+2025-06-03 20:34:36,030 - INFO - [Token] 📨 Token recebido de Computador2 para Computador3
+2025-06-03 20:34:36,030 - INFO - [Token] 🔢 Sequência: 0
+2025-06-03 20:34:36,030 - INFO - [Token] ⏱️ Timestamp: 2025-06-03 20:33:51.277399
+2025-06-03 20:34:36,034 - INFO - [Token] 🔄 Token em circulação - Token recebido - Pronto para enviar mensagens
+2025-06-03 20:34:36,034 - INFO - [Computador3] ✅ Token recebido - Pronto para enviar mensagens
+2025-06-03 20:34:36,088 - INFO - [Token] 🔄 Token em circulação - Nenhuma mensagem. Passando token.
+2025-06-03 20:34:36,088 - INFO - [Token] 📤 Enviando token de Computador3 para 127.0.0.1:6000
+2025-06-03 20:34:51,013 - INFO - [Token] 📨 Token recebido de Computador2 para Computador3
+2025-06-03 20:34:51,013 - INFO - [Token] 🔢 Sequência: 0
+2025-06-03 20:34:51,017 - INFO - [Token] ⏱️ Timestamp: 2025-06-03 20:33:51.277399
+2025-06-03 20:34:51,017 - INFO - [Token] 🔄 Token em circulação - Token recebido - Pronto para enviar mensagens
+2025-06-03 20:34:51,017 - INFO - [Computador3] ✅ Token recebido - Pronto para enviar mensagens
+2025-06-03 20:34:51,071 - INFO - [Token] 🔄 Token em circulação - Nenhuma mensagem. Passando token.
+2025-06-03 20:34:51,071 - INFO - [Token] 📤 Enviando token de Computador3 para 127.0.0.1:6000
+2025-06-03 20:35:06,096 - INFO - [Token] 📨 Token recebido de Computador2 para Computador3
+2025-06-03 20:35:06,097 - INFO - [Token] 🔢 Sequência: 0
+2025-06-03 20:35:06,098 - INFO - [Token] ⏱️ Timestamp: 2025-06-03 20:33:51.277399
+2025-06-03 20:35:06,099 - INFO - [Token] 🔄 Token em circulação - Token recebido - Pronto para enviar mensagens
+2025-06-03 20:35:06,100 - INFO - [Computador3] ✅ Token recebido - Pronto para enviar mensagens
+2025-06-03 20:35:06,154 - INFO - [Token] 🔄 Token em circulação - Nenhuma mensagem. Passando token.
+2025-06-03 20:35:06,154 - INFO - [Token] 📤 Enviando token de Computador3 para 127.0.0.1:6000
+2025-06-03 20:35:21,174 - INFO - [Token] 📨 Token recebido de Computador2 para Computador3
+2025-06-03 20:35:21,178 - INFO - [Token] 🔢 Sequência: 0
+2025-06-03 20:35:21,178 - INFO - [Token] ⏱️ Timestamp: 2025-06-03 20:33:51.277399
+2025-06-03 20:35:21,178 - INFO - [Token] 🔄 Token em circulação - Token recebido - Pronto para enviar mensagens
+2025-06-03 20:35:21,178 - INFO - [Computador3] ✅ Token recebido - Pronto para enviar mensagens
+2025-06-03 20:35:21,237 - INFO - [Token] 🔄 Token em circulação - Nenhuma mensagem. Passando token.
+2025-06-03 20:35:21,237 - INFO - [Token] 📤 Enviando token de Computador3 para 127.0.0.1:6000
+2025-06-03 20:35:36,156 - INFO - [Token] 📨 Token recebido de Computador2 para Computador3
+2025-06-03 20:35:36,156 - INFO - [Token] 🔢 Sequência: 0
+2025-06-03 20:35:36,156 - INFO - [Token] ⏱️ Timestamp: 2025-06-03 20:33:51.277399
+2025-06-03 20:35:36,156 - INFO - [Token] 🔄 Token em circulação - Token recebido - Pronto para enviar mensagens
+2025-06-03 20:35:36,156 - INFO - [Computador3] ✅ Token recebido - Pronto para enviar mensagens
+2025-06-03 20:35:36,222 - INFO - [Token] 🔄 Token em circulação - Nenhuma mensagem. Passando token.
+2025-06-03 20:35:36,222 - INFO - [Token] 📤 Enviando token de Computador3 para 127.0.0.1:6000
+2025-06-03 20:35:51,235 - INFO - [Token] 📨 Token recebido de Computador2 para Computador3
+2025-06-03 20:35:51,235 - INFO - [Token] 🔢 Sequência: 0
+2025-06-03 20:35:51,235 - INFO - [Token] ⏱️ Timestamp: 2025-06-03 20:33:51.277399
+2025-06-03 20:35:51,240 - INFO - [Token] 🔄 Token em circulação - Token recebido - Pronto para enviar mensagens
+2025-06-03 20:35:51,240 - INFO - [Computador3] ✅ Token recebido - Pronto para enviar mensagens
+2025-06-03 20:35:51,304 - INFO - [Token] 🔄 Token em circulação - Nenhuma mensagem. Passando token.
+2025-06-03 20:35:51,304 - INFO - [Token] 📤 Enviando token de Computador3 para 127.0.0.1:6000
+2025-06-03 20:36:06,312 - INFO - [Token] 📨 Token recebido de Computador2 para Computador3
+2025-06-03 20:36:06,312 - INFO - [Token] 🔢 Sequência: 0
+2025-06-03 20:36:06,312 - INFO - [Token] ⏱️ Timestamp: 2025-06-03 20:33:51.277399
+2025-06-03 20:36:06,312 - INFO - [Token] 🔄 Token em circulação - Token recebido - Pronto para enviar mensagens
+2025-06-03 20:36:06,312 - INFO - [Computador3] ✅ Token recebido - Pronto para enviar mensagens
+2025-06-03 20:36:06,387 - INFO - [Token] 🔄 Token em circulação - Nenhuma mensagem. Passando token.
+2025-06-03 20:36:06,387 - INFO - [Token] 📤 Enviando token de Computador3 para 127.0.0.1:6000
+2025-06-03 20:36:21,388 - INFO - [Token] 📨 Token recebido de Computador2 para Computador3
+2025-06-03 20:36:21,388 - INFO - [Token] 🔢 Sequência: 0
+2025-06-03 20:36:21,388 - INFO - [Token] ⏱️ Timestamp: 2025-06-03 20:33:51.277399
+2025-06-03 20:36:21,388 - INFO - [Token] 🔄 Token em circulação - Token recebido - Pronto para enviar mensagens
+2025-06-03 20:36:21,394 - INFO - [Computador3] ✅ Token recebido - Pronto para enviar mensagens
+2025-06-03 20:36:21,481 - INFO - [Token] 🔄 Token em circulação - Nenhuma mensagem. Passando token.
+2025-06-03 20:36:21,481 - INFO - [Token] 📤 Enviando token de Computador3 para 127.0.0.1:6000
+2025-06-03 20:36:36,469 - INFO - [Token] 📨 Token recebido de Computador2 para Computador3
+2025-06-03 20:36:36,469 - INFO - [Token] 🔢 Sequência: 0
+2025-06-03 20:36:36,469 - INFO - [Token] ⏱️ Timestamp: 2025-06-03 20:33:51.277399
+2025-06-03 20:36:36,475 - INFO - [Token] 🔄 Token em circulação - Token recebido - Pronto para enviar mensagens
+2025-06-03 20:36:36,476 - INFO - [Computador3] ✅ Token recebido - Pronto para enviar mensagens
+2025-06-03 20:36:36,476 - INFO - [Token] 🔄 Token em circulação - Nenhuma mensagem. Passando token.
+2025-06-03 20:36:36,476 - INFO - [Token] 📤 Enviando token de Computador3 para 127.0.0.1:6000
+2025-06-03 20:36:51,553 - INFO - [Token] 📨 Token recebido de Computador2 para Computador3
+2025-06-03 20:36:51,553 - INFO - [Token] 🔢 Sequência: 0
+2025-06-03 20:36:51,556 - INFO - [Token] ⏱️ Timestamp: 2025-06-03 20:33:51.277399
+2025-06-03 20:36:51,556 - INFO - [Token] 🔄 Token em circulação - Token recebido - Pronto para enviar mensagens
+2025-06-03 20:36:51,556 - INFO - [Computador3] ✅ Token recebido - Pronto para enviar mensagens
+2025-06-03 20:36:51,657 - INFO - [Token] 🔄 Token em circulação - Nenhuma mensagem. Passando token.
+2025-06-03 20:36:51,657 - INFO - [Token] 📤 Enviando token de Computador3 para 127.0.0.1:6000
+2025-06-03 20:37:00,358 - ERROR - Erro na interface: 
+2025-06-03 20:37:00,358 - INFO - Encerrando aplicação...
