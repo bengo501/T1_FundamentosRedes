@@ -48,7 +48,7 @@ nos_ativos = set()  # Conjunto de nós ativos na rede
 
 # Configuração de rede
 ip_local = "127.0.0.1"  # Usando localhost para teste
-porta_local = porta_destino
+porta_local = 6000
 
 # Mapeamento de apelidos para IPs e portas
 mapeamento_apelidos = {
@@ -285,11 +285,13 @@ def receptor():
                     if tempo_passado < tempo_minimo_token:
                         registrar_log(f"[{apelido}] ⚠️ ALERTA: Token recebido muito rápido!", mostrar_terminal=False)
                         registrar_log(f"[{apelido}] Tempo desde último token: {tempo_passado:.2f}s", mostrar_terminal=False)
-                        continue
+                        
                     
                     token_presente = True
                     ultima_passagem_token = tempo_atual
                     registrar_log(f"[{apelido}] ✅ Token recebido - Pronto para enviar mensagens", mostrar_terminal=False)
+                    time.sleep(3)  # Aguarda o tempo do token antes de enviar mensagens
+
 
             elif mensagem.startswith("7777:"):  # Pacote de dados
                 _, conteudo = mensagem.split(":", 1)
@@ -364,6 +366,8 @@ def receptor():
 
         except Exception as erro:
             registrar_log(f"[ERRO] Falha na recepção: {erro}")
+    
+
 
 # ================================
 # THREAD DO GERENCIADOR
@@ -401,6 +405,7 @@ def gerenciador():
                         pacote = f"7777:{controle};{apelido};{destino};{crc};{mensagem_pronta}"
                         registrar_log(f"[{apelido}] Enviando mensagem para {destino}")
                         enviar_udp(ip_destino, porta_destino, pacote)
+                        fila_mensagens.pop(0)
                         registrar_log(f"[{apelido}] Mensagem enviada: {mensagem_pronta}")
                         
                         # Aguarda um tempo para a mensagem voltar

@@ -1,6 +1,8 @@
-2025-05-21 18:56:54,244 - INFO - Iniciando nó Computador3 em 127.0.0.1:6000
-2025-05-21 18:56:54,247 - INFO - [Computador3] Receptor ativo em 127.0.0.1:6000
-2025-05-21 18:56:54,248 - INFO - [Computador3] Aguardando mensagens e tokens...
-2025-05-21 18:56:54,248 - INFO - [Computador3] Próximo nó: 127.0.0.1:6000
-2025-05-21 18:56:54,248 - INFO - [Computador3] Nó Computador3 adicionado ao mapeamento: 127.0.0.1:6000
-2025-05-21 18:56:54,248 - INFO - [Computador3] Enviando mensagem de descoberta para 127.0.0.1:6000
+2025-06-03 21:20:33,634 - INFO - Iniciando nó Computador3 em 127.0.0.1:6002
+2025-06-03 21:20:33,637 - INFO - [Computador3] Receptor ativo em 127.0.0.1:6002
+2025-06-03 21:20:33,637 - INFO - [Computador3] Aguardando mensagens e tokens...
+2025-06-03 21:20:33,637 - INFO - [Computador3] Próximo nó: 127.0.0.1:6000
+2025-06-03 21:20:33,637 - INFO - [Computador3] Nó Computador3 adicionado ao mapeamento: 127.0.0.1:6002
+2025-06-03 21:20:33,637 - INFO - [Computador3] Enviando mensagem de descoberta para 127.0.0.1:6000
+2025-06-03 21:20:34,200 - INFO - [Computador3] ✅ Token recebido - Pronto para enviar mensagens
+2025-06-03 21:20:34,241 - INFO - [Computador3] Nenhuma mensagem. Enviando token.
