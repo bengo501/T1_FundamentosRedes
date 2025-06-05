@@ -1,0 +1,169 @@
+DOCUMENTAÇÃO DO SISTEMA DE REDE EM ANEL
+=====================================
+Desenvolvido por:
+- Alexandre Coelho Borges Cheinquer
+- Bernardo Klein Heitz
+- Lucas Langer Lantmann
+
+1. VISÃO GERAL
+--------------
+Este sistema implementa uma rede em anel usando o protocolo UDP, onde as máquinas se comunicam através de 
+tokens e pacotes de dados. O sistema inclui controle de erro, retransmissão de mensagens e uma interface de 
+usuário interativa.
+
+2. ARQUITETURA DO SISTEMA
+-------------------------
+2.1 Componentes Principais:
+    - Thread de Receptor: Gerencia recebimento de mensagens e tokens
+    - Thread de Gerenciador: Controla fluxo do token e envio de mensagens
+    - Thread de Interface: Gerencia interação com usuário
+    - Sistema de Logging: Registra eventos e operações
+    - Mecanismo de Controle de Erro: Implementa CRC32 e NACK
+2.2 Estrutura de Dados:
+    - Fila de Mensagens: Lista de tuplas (destino, mensagem, reenviado)
+    - Mapeamento de Nós: Dicionário de apelidos para (IP, porta)
+    - Conjunto de Nós Ativos: Set com apelidos dos nós ativos
+
+3. FUNCIONALIDADES IMPLEMENTADAS
+-------------------------------
+3.1 Gerenciamento de Token:
+    - Controle de posse do token
+    - Timeout e regeneração (5 segundos)
+    - Detecção de múltiplos tokens
+    - Passagem automática após tempo definido
+3.2 Transmissão de Mensagens:
+    - Envio de mensagens para nós específicos
+    - Broadcast para todos os nós (TODOS)
+    - Retransmissão automática após NACK
+    - Controle de fila (máximo 10 mensagens)
+3.3 Controle de Erro:
+    - Cálculo e verificação de CRC32
+    - Detecção de erros de transmissão
+    - Mecanismo de NACK/ACK
+    - Retransmissão de mensagens com erro
+    - Simulação de erros forçados
+3.4 Descoberta de Nós:
+    - Mapeamento automático de nós ativos
+    - Atualização dinâmica da rede
+    - Propagação de informações de descoberta
+
+4. PROTOCOLOS DE COMUNICAÇÃO
+---------------------------
+4.1 Formato das Mensagens:
+    - Token: "9000"
+    - Dados: "7777:controle;origem;destino;crc;texto"
+    - Descoberta: "DISCOVER:apelido:ip:porta"
+4.2 Tipos de Controle:
+    - ACK: Confirmação de recebimento
+    - NACK: Erro detectado
+    - naoexiste: Destino não encontrado
+
+5. INTERFACE DO USUÁRIO
+-----------------------
+5.1 Menu Principal:
+    1. Enviar mensagem
+    2. Ver fila atual
+    3. Ver logs
+    4. Ver status da rede
+    5. Enviar mensagem com ERRO
+    6. Ver status do anel
+    7. Sair
+5.2 Funcionalidades de Visualização:
+    - Status da rede (nós ativos)
+    - Status do anel (token, fila)
+    - Fila de mensagens
+    - Logs do sistema (últimos 20)
+6. TRATAMENTO DE ERROS
+----------------------
+6.1 Erros de Transmissão:
+    - Detecção via CRC32
+    - Retransmissão automática
+    - Limite de tentativas (1 retransmissão)
+    - Logging de erros
+6.2 Erros de Sistema:
+    - Timeout do token (5 segundos)
+    - Múltiplos tokens
+    - Nós inativos
+    - Falhas de conexão
+
+7. CONFIGURAÇÃO DO SISTEMA
+-------------------------
+7.1 Arquivo de Configuração (config.txt):
+    - IP do próximo nó
+    - Porta do próximo nó
+    - Apelido do nó atual
+    - Tempo de posse do token
+    - Flag de gerador de token
+    - Tempo máximo de token (5s)
+7.2 Parâmetros do Sistema:
+    - Porta local: 6000
+    - IP local: 127.0.0.1
+    - Tamanho máximo da fila: 10
+    - Tempo mínimo entre tokens: 0.5s
+
+8. SISTEMA DE LOGGING
+--------------------
+8.1 Arquivo de Log:
+    - Nome: logs_Computer1.log
+    - Formato: timestamp - nível - mensagem
+    - Nível: INFO
+8.2 Eventos Registrados:
+    - Recebimento de mensagens
+    - Envio de mensagens
+    - Erros detectados
+    - Operações do token
+    - Atualizações de rede
+
+9. SEGURANÇA E CONCORRÊNCIA
+--------------------------
+9.1 Mecanismos de Sincronização:
+    - Mutex para fila de mensagens
+    - Lock para controle do token
+    - Threads daemon
+9.2 Proteções:
+    - Validação de destinos
+    - Verificação de CRC
+    - Controle de timeout
+    - Tratamento de exceções
+
+10. LIMITAÇÕES
+-------------
+10.1 Limitações Implementadas:
+     - Máximo de 10 mensagens na fila
+     - Tempo fixo de posse do token
+     - Simulação local (localhost)
+     - Uma tentativa de retransmissão
+
+11. MANUTENÇÃO
+-------------
+11.1 Logs:
+     - Monitoramento de erros
+     - Diagnóstico de problemas
+     - Auditoria de operações
+
+12. EXEMPLOS DE USO
+------------------
+12.1 Envio de Mensagem:
+     1. Selecionar opção 1 no menu
+     2. Informar destino (apelido ou TODOS)
+     3. Digitar mensagem
+     4. Aguardar confirmação
+12.2 Teste de Erro:
+     1. Selecionar opção 5 no menu
+     2. Informar destino
+     3. Digitar mensagem
+     4. Observar tratamento do erro
+
+13. TROUBLESHOOTING
+------------------
+13.1 Problemas Comuns:
+     - Token perdido (regeneração automática)
+     - Mensagens não entregues (retransmissão)
+     - Erros de CRC (NACK)
+     - Nós inativos (descoberta)
+
+14. CONCLUSÃO
+------------
+O sistema implementa uma rede em anel robusta com controle de erro e interface amigável. 
+A arquitetura permite fácil manutenção e extensão, enquanto os mecanismos de segurança garantem a 
+confiabilidade das comunicações. 
