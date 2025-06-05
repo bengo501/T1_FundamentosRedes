@@ -1,40 +1,9 @@
-2025-06-03 21:20:29,167 - INFO - Iniciando nó Computador1 em 127.0.0.1:6000
-2025-06-03 21:20:29,170 - INFO - [Computador1] Receptor ativo em 127.0.0.1:6000
-2025-06-03 21:20:29,170 - INFO - [Computador1] Aguardando mensagens e tokens...
-2025-06-03 21:20:29,170 - INFO - [Computador1] Próximo nó: 127.0.0.1:6001
-2025-06-03 21:20:29,170 - INFO - [Computador1] Nó Computador1 adicionado ao mapeamento: 127.0.0.1:6000
-2025-06-03 21:20:29,170 - INFO - [Computador1] Enviando mensagem de descoberta para 127.0.0.1:6001
-2025-06-03 21:20:33,637 - INFO - [Computador3] Nó Computador3 adicionado ao mapeamento: 127.0.0.1:6002
-2025-06-03 21:20:33,637 - INFO - [Computador1] Nó descoberto: Computador3 (127.0.0.1:6002)
-2025-06-03 21:20:34,195 - INFO - [Computador1] ⚠️ TIMEOUT! Regenerando token...
-2025-06-03 21:20:34,195 - INFO - [Computador1] Última passagem do token: 5.03s atrás
-2025-06-03 21:20:34,242 - INFO - [Computador1] ⚠️ ALERTA: Token recebido muito rápido!
-2025-06-03 21:20:34,242 - INFO - [Computador1] Tempo desde último token: 0.05s
-2025-06-03 21:20:34,243 - INFO - [Computador1] ✅ Token recebido - Pronto para enviar mensagens
-2025-06-03 21:20:34,297 - INFO - [Computador1] Nenhuma mensagem. Enviando token.
-2025-06-03 21:20:37,259 - INFO - [Computador1] ✅ Token recebido - Pronto para enviar mensagens
-2025-06-03 21:20:37,312 - INFO - [Computador1] Nenhuma mensagem. Enviando token.
-2025-06-03 21:20:40,277 - INFO - [Computador1] ✅ Token recebido - Pronto para enviar mensagens
-2025-06-03 21:20:40,330 - INFO - [Computador1] Nenhuma mensagem. Enviando token.
-2025-06-03 21:20:43,296 - INFO - [Computador1] ✅ Token recebido - Pronto para enviar mensagens
-2025-06-03 21:20:43,349 - INFO - [Computador1] Nenhuma mensagem. Enviando token.
-2025-06-03 21:20:46,312 - INFO - [Computador1] ✅ Token recebido - Pronto para enviar mensagens
-2025-06-03 21:20:46,367 - INFO - [Computador1] Nenhuma mensagem. Enviando token.
-2025-06-03 21:20:49,330 - INFO - [Computador1] ✅ Token recebido - Pronto para enviar mensagens
-2025-06-03 21:20:49,384 - INFO - [Computador1] Nenhuma mensagem. Enviando token.
-2025-06-03 21:20:52,349 - INFO - [Computador1] ✅ Token recebido - Pronto para enviar mensagens
-2025-06-03 21:20:52,404 - INFO - [Computador1] Nenhuma mensagem. Enviando token.
-2025-06-03 21:20:55,370 - INFO - [Computador1] ✅ Token recebido - Pronto para enviar mensagens
-2025-06-03 21:20:55,425 - INFO - [Computador1] Nenhuma mensagem. Enviando token.
-2025-06-03 21:20:58,385 - INFO - [Computador1] ✅ Token recebido - Pronto para enviar mensagens
-2025-06-03 21:20:58,441 - INFO - [Computador1] Nenhuma mensagem. Enviando token.
-2025-06-03 21:21:01,386 - INFO - [Computador1] ✅ Token recebido - Pronto para enviar mensagens
-2025-06-03 21:21:01,460 - INFO - [Computador1] Nenhuma mensagem. Enviando token.
-2025-06-03 21:21:04,388 - INFO - [Computador1] ✅ Token recebido - Pronto para enviar mensagens
-2025-06-03 21:21:04,481 - INFO - [Computador1] Nenhuma mensagem. Enviando token.
-2025-06-03 21:21:07,389 - INFO - [Computador1] ✅ Token recebido - Pronto para enviar mensagens
-2025-06-03 21:21:07,400 - INFO - [Computador1] Nenhuma mensagem. Enviando token.
-2025-06-03 21:21:10,390 - INFO - [Computador1] ✅ Token recebido - Pronto para enviar mensagens
-2025-06-03 21:21:10,418 - INFO - [Computador1] Nenhuma mensagem. Enviando token.
-2025-06-03 21:21:13,390 - INFO - [Computador1] ✅ Token recebido - Pronto para enviar mensagens
-2025-06-03 21:21:13,435 - INFO - [Computador1] Nenhuma mensagem. Enviando token.
+2025-06-05 19:38:47,586 - INFO - Iniciando nó Computador1 em 127.0.0.1:6000
+2025-06-05 19:38:47,586 - INFO - [Computador1] Receptor ativo em 127.0.0.1:6000
+2025-06-05 19:38:47,586 - INFO - [Computador1] Aguardando mensagens e tokens...
+2025-06-05 19:38:47,586 - INFO - [Computador1] Próximo nó: 127.0.0.1:6001
+2025-06-05 19:38:47,586 - INFO - [Computador1] Nó Computador1 adicionado ao mapeamento: 127.0.0.1:6000
+2025-06-05 19:38:47,586 - INFO - [Computador1] Mensagem enviada com sucesso para 127.0.0.1:6001
+2025-06-05 19:38:47,586 - INFO - [Computador1] Enviando mensagem de descoberta para 127.0.0.1:6001
+2025-06-05 19:38:52,277 - INFO - Encerrando aplicação...
+2025-06-05 19:38:52,277 - ERROR - Erro na interface: 

@@ -1,8 +1,205 @@
-2025-06-03 21:20:33,634 - INFO - Iniciando nó Computador3 em 127.0.0.1:6002
-2025-06-03 21:20:33,637 - INFO - [Computador3] Receptor ativo em 127.0.0.1:6002
-2025-06-03 21:20:33,637 - INFO - [Computador3] Aguardando mensagens e tokens...
-2025-06-03 21:20:33,637 - INFO - [Computador3] Próximo nó: 127.0.0.1:6000
-2025-06-03 21:20:33,637 - INFO - [Computador3] Nó Computador3 adicionado ao mapeamento: 127.0.0.1:6002
-2025-06-03 21:20:33,637 - INFO - [Computador3] Enviando mensagem de descoberta para 127.0.0.1:6000
-2025-06-03 21:20:34,200 - INFO - [Computador3] ✅ Token recebido - Pronto para enviar mensagens
-2025-06-03 21:20:34,241 - INFO - [Computador3] Nenhuma mensagem. Enviando token.
+2025-06-05 19:36:40,240 - INFO - Iniciando nó Computador3 em 127.0.0.1:6002
+2025-06-05 19:36:40,240 - INFO - [Computador3] Receptor ativo em 127.0.0.1:6002
+2025-06-05 19:36:40,240 - INFO - [Computador3] Aguardando mensagens e tokens...
+2025-06-05 19:36:40,240 - INFO - [Computador3] Próximo nó: 127.0.0.1:6000
+2025-06-05 19:36:40,240 - INFO - [Computador3] Nó Computador3 adicionado ao mapeamento: 127.0.0.1:6002
+2025-06-05 19:36:40,240 - INFO - [Computador3] ✅ Mensagem enviada com sucesso para 127.0.0.1:6000
+2025-06-05 19:36:40,240 - INFO - [Computador3] Enviando mensagem de descoberta para 127.0.0.1:6000
+2025-06-05 19:36:44,409 - INFO - [Computador3] ✅ Token recebido de 127.0.0.1:6000 - Pronto para enviar mensagens
+2025-06-05 19:36:44,409 - INFO - [Computador3] 📍 TOKEN: Atualmente em Computador3
+2025-06-05 19:36:44,466 - INFO - [Computador3] Nenhuma mensagem. Enviando token para 127.0.0.1:6000.
+2025-06-05 19:36:44,466 - INFO - [Computador3] 📍 TOKEN: Movendo para próximo nó
+2025-06-05 19:36:44,466 - INFO - [Computador3] ✅ Token enviado com sucesso para 127.0.0.1:6000
+2025-06-05 19:36:47,425 - INFO - [Computador3] ✅ Token recebido de 127.0.0.1:6000 - Pronto para enviar mensagens
+2025-06-05 19:36:47,425 - INFO - [Computador3] 📍 TOKEN: Atualmente em Computador3
+2025-06-05 19:36:47,482 - INFO - [Computador3] Nenhuma mensagem. Enviando token para 127.0.0.1:6000.
+2025-06-05 19:36:47,482 - INFO - [Computador3] 📍 TOKEN: Movendo para próximo nó
+2025-06-05 19:36:47,484 - INFO - [Computador3] ✅ Token enviado com sucesso para 127.0.0.1:6000
+2025-06-05 19:36:50,442 - INFO - [Computador3] ✅ Token recebido de 127.0.0.1:6000 - Pronto para enviar mensagens
+2025-06-05 19:36:50,442 - INFO - [Computador3] 📍 TOKEN: Atualmente em Computador3
+2025-06-05 19:36:50,500 - INFO - [Computador3] Nenhuma mensagem. Enviando token para 127.0.0.1:6000.
+2025-06-05 19:36:50,500 - INFO - [Computador3] 📍 TOKEN: Movendo para próximo nó
+2025-06-05 19:36:50,500 - INFO - [Computador3] ✅ Token enviado com sucesso para 127.0.0.1:6000
+2025-06-05 19:36:54,845 - INFO - [Computador3] 📦 PACOTE: Computador1 -> Computador3 | Status: naoexiste
+2025-06-05 19:36:54,845 - INFO - [Computador1] Nó Computador1 adicionado ao mapeamento: 127.0.0.1:51643
+2025-06-05 19:36:54,854 - INFO - [Computador3] ✅ MENSAGEM RECEBIDA de Computador1: 19:36:49 | Computador1 -> Computador3: aaERRO_PERMANENTE
+2025-06-05 19:36:54,854 - INFO - [Computador3] 🔍 Verificando conteúdo da mensagem...
+2025-06-05 19:36:54,854 - INFO - [Computador3] ✅ Mensagem válida - Enviando ACK
+2025-06-05 19:36:54,854 - INFO - [Computador3] ✅ Mensagem enviada com sucesso para 127.0.0.1:51643
+2025-06-05 19:36:56,976 - INFO - [Computador3] ✅ Token recebido de 127.0.0.1:6000 - Pronto para enviar mensagens
+2025-06-05 19:36:56,976 - INFO - [Computador3] 📍 TOKEN: Atualmente em Computador3
+2025-06-05 19:36:57,033 - INFO - [Computador3] Nenhuma mensagem. Enviando token para 127.0.0.1:6000.
+2025-06-05 19:36:57,033 - INFO - [Computador3] 📍 TOKEN: Movendo para próximo nó
+2025-06-05 19:36:57,033 - INFO - [Computador3] ✅ Token enviado com sucesso para 127.0.0.1:6000
+2025-06-05 19:36:59,996 - INFO - [Computador3] ✅ Token recebido de 127.0.0.1:6000 - Pronto para enviar mensagens
+2025-06-05 19:36:59,996 - INFO - [Computador3] 📍 TOKEN: Atualmente em Computador3
+2025-06-05 19:37:00,048 - INFO - [Computador3] Nenhuma mensagem. Enviando token para 127.0.0.1:6000.
+2025-06-05 19:37:00,048 - INFO - [Computador3] 📍 TOKEN: Movendo para próximo nó
+2025-06-05 19:37:00,050 - INFO - [Computador3] ✅ Token enviado com sucesso para 127.0.0.1:6000
+2025-06-05 19:37:03,013 - INFO - [Computador3] ✅ Token recebido de 127.0.0.1:6000 - Pronto para enviar mensagens
+2025-06-05 19:37:03,013 - INFO - [Computador3] 📍 TOKEN: Atualmente em Computador3
+2025-06-05 19:37:03,091 - INFO - [Computador3] Nenhuma mensagem. Enviando token para 127.0.0.1:6000.
+2025-06-05 19:37:03,092 - INFO - [Computador3] 📍 TOKEN: Movendo para próximo nó
+2025-06-05 19:37:03,092 - INFO - [Computador3] ✅ Token enviado com sucesso para 127.0.0.1:6000
+2025-06-05 19:37:06,030 - INFO - [Computador3] ✅ Token recebido de 127.0.0.1:6000 - Pronto para enviar mensagens
+2025-06-05 19:37:06,030 - INFO - [Computador3] 📍 TOKEN: Atualmente em Computador3
+2025-06-05 19:37:06,109 - INFO - [Computador3] Nenhuma mensagem. Enviando token para 127.0.0.1:6000.
+2025-06-05 19:37:06,109 - INFO - [Computador3] 📍 TOKEN: Movendo para próximo nó
+2025-06-05 19:37:06,109 - INFO - [Computador3] ✅ Token enviado com sucesso para 127.0.0.1:6000
+2025-06-05 19:37:09,047 - INFO - [Computador3] ✅ Token recebido de 127.0.0.1:6000 - Pronto para enviar mensagens
+2025-06-05 19:37:09,047 - INFO - [Computador3] 📍 TOKEN: Atualmente em Computador3
+2025-06-05 19:37:09,129 - INFO - [Computador3] Nenhuma mensagem. Enviando token para 127.0.0.1:6000.
+2025-06-05 19:37:09,129 - INFO - [Computador3] 📍 TOKEN: Movendo para próximo nó
+2025-06-05 19:37:09,129 - INFO - [Computador3] ✅ Token enviado com sucesso para 127.0.0.1:6000
+2025-06-05 19:37:12,049 - INFO - [Computador3] ✅ Token recebido de 127.0.0.1:6000 - Pronto para enviar mensagens
+2025-06-05 19:37:12,049 - INFO - [Computador3] 📍 TOKEN: Atualmente em Computador3
+2025-06-05 19:37:12,147 - INFO - [Computador3] Nenhuma mensagem. Enviando token para 127.0.0.1:6000.
+2025-06-05 19:37:12,147 - INFO - [Computador3] 📍 TOKEN: Movendo para próximo nó
+2025-06-05 19:37:12,147 - INFO - [Computador3] ✅ Token enviado com sucesso para 127.0.0.1:6000
+2025-06-05 19:37:15,050 - INFO - [Computador3] ✅ Token recebido de 127.0.0.1:6000 - Pronto para enviar mensagens
+2025-06-05 19:37:15,050 - INFO - [Computador3] 📍 TOKEN: Atualmente em Computador3
+2025-06-05 19:37:15,065 - INFO - [Computador3] Nenhuma mensagem. Enviando token para 127.0.0.1:6000.
+2025-06-05 19:37:15,065 - INFO - [Computador3] 📍 TOKEN: Movendo para próximo nó
+2025-06-05 19:37:15,065 - INFO - [Computador3] ✅ Token enviado com sucesso para 127.0.0.1:6000
+2025-06-05 19:37:18,052 - INFO - [Computador3] ✅ Token recebido de 127.0.0.1:6000 - Pronto para enviar mensagens
+2025-06-05 19:37:18,052 - INFO - [Computador3] 📍 TOKEN: Atualmente em Computador3
+2025-06-05 19:37:18,084 - INFO - [Computador3] Nenhuma mensagem. Enviando token para 127.0.0.1:6000.
+2025-06-05 19:37:18,084 - INFO - [Computador3] 📍 TOKEN: Movendo para próximo nó
+2025-06-05 19:37:18,084 - INFO - [Computador3] ✅ Token enviado com sucesso para 127.0.0.1:6000
+2025-06-05 19:37:21,053 - INFO - [Computador3] ✅ Token recebido de 127.0.0.1:6000 - Pronto para enviar mensagens
+2025-06-05 19:37:21,053 - INFO - [Computador3] 📍 TOKEN: Atualmente em Computador3
+2025-06-05 19:37:21,100 - INFO - [Computador3] Nenhuma mensagem. Enviando token para 127.0.0.1:6000.
+2025-06-05 19:37:21,100 - INFO - [Computador3] 📍 TOKEN: Movendo para próximo nó
+2025-06-05 19:37:21,100 - INFO - [Computador3] ✅ Token enviado com sucesso para 127.0.0.1:6000
+2025-06-05 19:37:24,054 - INFO - [Computador3] ✅ Token recebido de 127.0.0.1:6000 - Pronto para enviar mensagens
+2025-06-05 19:37:24,055 - INFO - [Computador3] 📍 TOKEN: Atualmente em Computador3
+2025-06-05 19:37:24,116 - INFO - [Computador3] Nenhuma mensagem. Enviando token para 127.0.0.1:6000.
+2025-06-05 19:37:24,116 - INFO - [Computador3] 📍 TOKEN: Movendo para próximo nó
+2025-06-05 19:37:24,116 - INFO - [Computador3] ✅ Token enviado com sucesso para 127.0.0.1:6000
+2025-06-05 19:37:27,056 - INFO - [Computador3] ✅ Token recebido de 127.0.0.1:6000 - Pronto para enviar mensagens
+2025-06-05 19:37:27,056 - INFO - [Computador3] 📍 TOKEN: Atualmente em Computador3
+2025-06-05 19:37:27,133 - INFO - [Computador3] Nenhuma mensagem. Enviando token para 127.0.0.1:6000.
+2025-06-05 19:37:27,133 - INFO - [Computador3] 📍 TOKEN: Movendo para próximo nó
+2025-06-05 19:37:27,133 - INFO - [Computador3] ✅ Token enviado com sucesso para 127.0.0.1:6000
+2025-06-05 19:37:30,063 - INFO - [Computador3] ✅ Token recebido de 127.0.0.1:6000 - Pronto para enviar mensagens
+2025-06-05 19:37:30,063 - INFO - [Computador3] 📍 TOKEN: Atualmente em Computador3
+2025-06-05 19:37:30,149 - INFO - [Computador3] Nenhuma mensagem. Enviando token para 127.0.0.1:6000.
+2025-06-05 19:37:30,149 - INFO - [Computador3] 📍 TOKEN: Movendo para próximo nó
+2025-06-05 19:37:30,149 - INFO - [Computador3] ✅ Token enviado com sucesso para 127.0.0.1:6000
+2025-06-05 19:37:33,066 - INFO - [Computador3] ✅ Token recebido de 127.0.0.1:6000 - Pronto para enviar mensagens
+2025-06-05 19:37:33,066 - INFO - [Computador3] Nenhuma mensagem. Enviando token para 127.0.0.1:6000.
+2025-06-05 19:37:33,066 - INFO - [Computador3] 📍 TOKEN: Atualmente em Computador3
+2025-06-05 19:37:33,068 - INFO - [Computador3] 📍 TOKEN: Movendo para próximo nó
+2025-06-05 19:37:33,068 - INFO - [Computador3] ✅ Token enviado com sucesso para 127.0.0.1:6000
+2025-06-05 19:37:36,069 - INFO - [Computador3] ✅ Token recebido de 127.0.0.1:6000 - Pronto para enviar mensagens
+2025-06-05 19:37:36,070 - INFO - [Computador3] 📍 TOKEN: Atualmente em Computador3
+2025-06-05 19:37:36,088 - INFO - [Computador3] Nenhuma mensagem. Enviando token para 127.0.0.1:6000.
+2025-06-05 19:37:36,088 - INFO - [Computador3] 📍 TOKEN: Movendo para próximo nó
+2025-06-05 19:37:36,088 - INFO - [Computador3] ✅ Token enviado com sucesso para 127.0.0.1:6000
+2025-06-05 19:37:39,071 - INFO - [Computador3] ✅ Token recebido de 127.0.0.1:6000 - Pronto para enviar mensagens
+2025-06-05 19:37:39,071 - INFO - [Computador3] 📍 TOKEN: Atualmente em Computador3
+2025-06-05 19:37:39,114 - INFO - [Computador3] Nenhuma mensagem. Enviando token para 127.0.0.1:6000.
+2025-06-05 19:37:39,114 - INFO - [Computador3] 📍 TOKEN: Movendo para próximo nó
+2025-06-05 19:37:39,116 - INFO - [Computador3] ✅ Token enviado com sucesso para 127.0.0.1:6000
+2025-06-05 19:37:42,073 - INFO - [Computador3] ✅ Token recebido de 127.0.0.1:6000 - Pronto para enviar mensagens
+2025-06-05 19:37:42,073 - INFO - [Computador3] 📍 TOKEN: Atualmente em Computador3
+2025-06-05 19:37:42,131 - INFO - [Computador3] Nenhuma mensagem. Enviando token para 127.0.0.1:6000.
+2025-06-05 19:37:42,131 - INFO - [Computador3] 📍 TOKEN: Movendo para próximo nó
+2025-06-05 19:37:42,131 - INFO - [Computador3] ✅ Token enviado com sucesso para 127.0.0.1:6000
+2025-06-05 19:37:45,074 - INFO - [Computador3] ✅ Token recebido de 127.0.0.1:6000 - Pronto para enviar mensagens
+2025-06-05 19:37:45,074 - INFO - [Computador3] 📍 TOKEN: Atualmente em Computador3
+2025-06-05 19:37:45,149 - INFO - [Computador3] Nenhuma mensagem. Enviando token para 127.0.0.1:6000.
+2025-06-05 19:37:45,149 - INFO - [Computador3] 📍 TOKEN: Movendo para próximo nó
+2025-06-05 19:37:45,149 - INFO - [Computador3] ✅ Token enviado com sucesso para 127.0.0.1:6000
+2025-06-05 19:37:48,076 - INFO - [Computador3] ✅ Token recebido de 127.0.0.1:6000 - Pronto para enviar mensagens
+2025-06-05 19:37:48,076 - INFO - [Computador3] 📍 TOKEN: Atualmente em Computador3
+2025-06-05 19:37:48,079 - INFO - [Computador3] Nenhuma mensagem. Enviando token para 127.0.0.1:6000.
+2025-06-05 19:37:48,080 - INFO - [Computador3] 📍 TOKEN: Movendo para próximo nó
+2025-06-05 19:37:48,080 - INFO - [Computador3] ✅ Token enviado com sucesso para 127.0.0.1:6000
+2025-06-05 19:37:51,076 - INFO - [Computador3] ✅ Token recebido de 127.0.0.1:6000 - Pronto para enviar mensagens
+2025-06-05 19:37:51,076 - INFO - [Computador3] 📍 TOKEN: Atualmente em Computador3
+2025-06-05 19:37:51,102 - INFO - [Computador3] Nenhuma mensagem. Enviando token para 127.0.0.1:6000.
+2025-06-05 19:37:51,102 - INFO - [Computador3] 📍 TOKEN: Movendo para próximo nó
+2025-06-05 19:37:51,105 - INFO - [Computador3] ✅ Token enviado com sucesso para 127.0.0.1:6000
+2025-06-05 19:37:54,078 - INFO - [Computador3] ✅ Token recebido de 127.0.0.1:6000 - Pronto para enviar mensagens
+2025-06-05 19:37:54,078 - INFO - [Computador3] 📍 TOKEN: Atualmente em Computador3
+2025-06-05 19:37:54,121 - INFO - [Computador3] Nenhuma mensagem. Enviando token para 127.0.0.1:6000.
+2025-06-05 19:37:54,121 - INFO - [Computador3] 📍 TOKEN: Movendo para próximo nó
+2025-06-05 19:37:54,122 - INFO - [Computador3] ✅ Token enviado com sucesso para 127.0.0.1:6000
+2025-06-05 19:37:57,080 - INFO - [Computador3] ✅ Token recebido de 127.0.0.1:6000 - Pronto para enviar mensagens
+2025-06-05 19:37:57,080 - INFO - [Computador3] 📍 TOKEN: Atualmente em Computador3
+2025-06-05 19:37:57,138 - INFO - [Computador3] Nenhuma mensagem. Enviando token para 127.0.0.1:6000.
+2025-06-05 19:37:57,138 - INFO - [Computador3] 📍 TOKEN: Movendo para próximo nó
+2025-06-05 19:37:57,138 - INFO - [Computador3] ✅ Token enviado com sucesso para 127.0.0.1:6000
+2025-06-05 19:38:00,081 - INFO - [Computador3] ✅ Token recebido de 127.0.0.1:6000 - Pronto para enviar mensagens
+2025-06-05 19:38:00,081 - INFO - [Computador3] 📍 TOKEN: Atualmente em Computador3
+2025-06-05 19:38:00,156 - INFO - [Computador3] Nenhuma mensagem. Enviando token para 127.0.0.1:6000.
+2025-06-05 19:38:00,156 - INFO - [Computador3] 📍 TOKEN: Movendo para próximo nó
+2025-06-05 19:38:00,156 - INFO - [Computador3] ✅ Token enviado com sucesso para 127.0.0.1:6000
+2025-06-05 19:38:03,082 - INFO - [Computador3] ✅ Token recebido de 127.0.0.1:6000 - Pronto para enviar mensagens
+2025-06-05 19:38:03,082 - INFO - [Computador3] 📍 TOKEN: Atualmente em Computador3
+2025-06-05 19:38:03,172 - INFO - [Computador3] Nenhuma mensagem. Enviando token para 127.0.0.1:6000.
+2025-06-05 19:38:03,172 - INFO - [Computador3] 📍 TOKEN: Movendo para próximo nó
+2025-06-05 19:38:03,172 - INFO - [Computador3] ✅ Token enviado com sucesso para 127.0.0.1:6000
+2025-06-05 19:38:06,083 - INFO - [Computador3] ✅ Token recebido de 127.0.0.1:6000 - Pronto para enviar mensagens
+2025-06-05 19:38:06,083 - INFO - [Computador3] 📍 TOKEN: Atualmente em Computador3
+2025-06-05 19:38:06,088 - INFO - [Computador3] Nenhuma mensagem. Enviando token para 127.0.0.1:6000.
+2025-06-05 19:38:06,088 - INFO - [Computador3] 📍 TOKEN: Movendo para próximo nó
+2025-06-05 19:38:06,088 - INFO - [Computador3] ✅ Token enviado com sucesso para 127.0.0.1:6000
+2025-06-05 19:38:09,085 - INFO - [Computador3] ✅ Token recebido de 127.0.0.1:6000 - Pronto para enviar mensagens
+2025-06-05 19:38:09,085 - INFO - [Computador3] 📍 TOKEN: Atualmente em Computador3
+2025-06-05 19:38:09,104 - INFO - [Computador3] Nenhuma mensagem. Enviando token para 127.0.0.1:6000.
+2025-06-05 19:38:09,104 - INFO - [Computador3] 📍 TOKEN: Movendo para próximo nó
+2025-06-05 19:38:09,104 - INFO - [Computador3] ✅ Token enviado com sucesso para 127.0.0.1:6000
+2025-06-05 19:38:12,086 - INFO - [Computador3] ✅ Token recebido de 127.0.0.1:6000 - Pronto para enviar mensagens
+2025-06-05 19:38:12,086 - INFO - [Computador3] 📍 TOKEN: Atualmente em Computador3
+2025-06-05 19:38:12,160 - INFO - [Computador3] Nenhuma mensagem. Enviando token para 127.0.0.1:6000.
+2025-06-05 19:38:12,160 - INFO - [Computador3] 📍 TOKEN: Movendo para próximo nó
+2025-06-05 19:38:12,161 - INFO - [Computador3] ✅ Token enviado com sucesso para 127.0.0.1:6000
+2025-06-05 19:38:15,090 - INFO - [Computador3] ✅ Token recebido de 127.0.0.1:6000 - Pronto para enviar mensagens
+2025-06-05 19:38:15,090 - INFO - [Computador3] 📍 TOKEN: Atualmente em Computador3
+2025-06-05 19:38:15,188 - INFO - [Computador3] Nenhuma mensagem. Enviando token para 127.0.0.1:6000.
+2025-06-05 19:38:15,189 - INFO - [Computador3] 📍 TOKEN: Movendo para próximo nó
+2025-06-05 19:38:15,191 - INFO - [Computador3] ✅ Token enviado com sucesso para 127.0.0.1:6000
+2025-06-05 19:38:18,091 - INFO - [Computador3] ✅ Token recebido de 127.0.0.1:6000 - Pronto para enviar mensagens
+2025-06-05 19:38:18,091 - INFO - [Computador3] 📍 TOKEN: Atualmente em Computador3
+2025-06-05 19:38:18,117 - INFO - [Computador3] Nenhuma mensagem. Enviando token para 127.0.0.1:6000.
+2025-06-05 19:38:18,117 - INFO - [Computador3] 📍 TOKEN: Movendo para próximo nó
+2025-06-05 19:38:18,117 - INFO - [Computador3] ✅ Token enviado com sucesso para 127.0.0.1:6000
+2025-06-05 19:38:21,092 - INFO - [Computador3] ✅ Token recebido de 127.0.0.1:6000 - Pronto para enviar mensagens
+2025-06-05 19:38:21,092 - INFO - [Computador3] 📍 TOKEN: Atualmente em Computador3
+2025-06-05 19:38:21,132 - INFO - [Computador3] Nenhuma mensagem. Enviando token para 127.0.0.1:6000.
+2025-06-05 19:38:21,132 - INFO - [Computador3] 📍 TOKEN: Movendo para próximo nó
+2025-06-05 19:38:21,133 - INFO - [Computador3] ✅ Token enviado com sucesso para 127.0.0.1:6000
+2025-06-05 19:38:24,093 - INFO - [Computador3] ✅ Token recebido de 127.0.0.1:6000 - Pronto para enviar mensagens
+2025-06-05 19:38:24,093 - INFO - [Computador3] 📍 TOKEN: Atualmente em Computador3
+2025-06-05 19:38:24,176 - INFO - [Computador3] Nenhuma mensagem. Enviando token para 127.0.0.1:6000.
+2025-06-05 19:38:24,176 - INFO - [Computador3] 📍 TOKEN: Movendo para próximo nó
+2025-06-05 19:38:24,178 - INFO - [Computador3] ✅ Token enviado com sucesso para 127.0.0.1:6000
+2025-06-05 19:38:27,095 - INFO - [Computador3] ✅ Token recebido de 127.0.0.1:6000 - Pronto para enviar mensagens
+2025-06-05 19:38:27,095 - INFO - [Computador3] 📍 TOKEN: Atualmente em Computador3
+2025-06-05 19:38:27,096 - INFO - [Computador3] Nenhuma mensagem. Enviando token para 127.0.0.1:6000.
+2025-06-05 19:38:27,096 - INFO - [Computador3] 📍 TOKEN: Movendo para próximo nó
+2025-06-05 19:38:27,096 - INFO - [Computador3] ✅ Token enviado com sucesso para 127.0.0.1:6000
+2025-06-05 19:38:30,096 - INFO - [Computador3] ✅ Token recebido de 127.0.0.1:6000 - Pronto para enviar mensagens
+2025-06-05 19:38:30,096 - INFO - [Computador3] 📍 TOKEN: Atualmente em Computador3
+2025-06-05 19:38:30,114 - INFO - [Computador3] Nenhuma mensagem. Enviando token para 127.0.0.1:6000.
+2025-06-05 19:38:30,114 - INFO - [Computador3] 📍 TOKEN: Movendo para próximo nó
+2025-06-05 19:38:30,116 - INFO - [Computador3] ✅ Token enviado com sucesso para 127.0.0.1:6000
+2025-06-05 19:38:33,097 - INFO - [Computador3] ✅ Token recebido de 127.0.0.1:6000 - Pronto para enviar mensagens
+2025-06-05 19:38:33,097 - INFO - [Computador3] 📍 TOKEN: Atualmente em Computador3
+2025-06-05 19:38:33,130 - INFO - [Computador3] Nenhuma mensagem. Enviando token para 127.0.0.1:6000.
+2025-06-05 19:38:33,130 - INFO - [Computador3] 📍 TOKEN: Movendo para próximo nó
+2025-06-05 19:38:33,132 - INFO - [Computador3] ✅ Token enviado com sucesso para 127.0.0.1:6000
+2025-06-05 19:38:36,099 - INFO - [Computador3] ✅ Token recebido de 127.0.0.1:6000 - Pronto para enviar mensagens
+2025-06-05 19:38:36,099 - INFO - [Computador3] 📍 TOKEN: Atualmente em Computador3
+2025-06-05 19:38:36,149 - INFO - [Computador3] Nenhuma mensagem. Enviando token para 127.0.0.1:6000.
+2025-06-05 19:38:36,149 - INFO - [Computador3] 📍 TOKEN: Movendo para próximo nó
+2025-06-05 19:38:36,151 - INFO - [Computador3] ✅ Token enviado com sucesso para 127.0.0.1:6000
+2025-06-05 19:38:39,100 - INFO - [Computador3] ✅ Token recebido de 127.0.0.1:6000 - Pronto para enviar mensagens
+2025-06-05 19:38:39,100 - INFO - [Computador3] 📍 TOKEN: Atualmente em Computador3
+2025-06-05 19:38:39,168 - INFO - [Computador3] Nenhuma mensagem. Enviando token para 127.0.0.1:6000.
+2025-06-05 19:38:39,168 - INFO - [Computador3] 📍 TOKEN: Movendo para próximo nó
+2025-06-05 19:38:39,170 - INFO - [Computador3] ✅ Token enviado com sucesso para 127.0.0.1:6000
+2025-06-05 19:38:39,221 - INFO - Encerrando aplicação...
+2025-06-05 19:38:39,221 - ERROR - Erro na interface: 
